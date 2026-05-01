@@ -1,0 +1,38 @@
+:root{
+    --bg-body: white;
+    --bg-section: white;
+    --color-body: black;
+    --color-section: black;
+    --border: 1px solid black;
+    --box-shadow: 1px 1px 5px 0px grey;
+
+    --title-size: 42px;
+    --title-weight: 600;
+    --section-title: 24px;
+    --section-weight: 600;
+    --subtitle-size: 18px;
+    --subtitle-weight: 500;
+    --text-size: 14px;
+    --text-weight: 400;
+}
+body{
+    background: var(--bg-body);
+    color: var(--color-body);
+    font-family: "Montserrat";
+}
+.conteyner{
+    max-width: 1200px;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+body a{
+    text-decoration: none;
+}
+body ul,ol{
+    list-style: none;
+}
+body button{
+    cursor: pointer;
+}
