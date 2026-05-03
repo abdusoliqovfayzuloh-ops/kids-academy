@@ -15,6 +15,7 @@ function AdminLogin() {
       
       if(admin.role == "admin"){
         navigate("/layoutAdmin/dashboard")
+        localStorage.setItem("adminObject", JSON.stringify(admin))
       }else{
         navigate("/login/student")
       }

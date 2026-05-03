@@ -1,5 +1,5 @@
 .site__header{
-    background: grey;
+    background: white;
     height: 80px;
     width: 100%;
     
@@ -13,7 +13,7 @@
 }
 .navbar__list{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 70px;
 }
@@ -22,4 +22,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.navbar_link{
+    color: black;
+    padding-top: 5px;
 }

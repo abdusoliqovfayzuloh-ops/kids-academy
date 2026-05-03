@@ -1,0 +1,7 @@
+.hero{
+    background: linear-gradient(135deg, lightgreen 10%, rgb(0, 157, 255) 80%, rgba(255, 166, 0, 0.55) 100%);
+    width: 100%;
+    height: 450px;
+    border-bottom-left-radius: 100px ;
+    border-bottom-right-radius: 100px ;
+}
