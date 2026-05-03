@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './StudentLogin.css'
 
 function StudentLogin() {
   useEffect(() => {
@@ -11,12 +12,12 @@ function StudentLogin() {
   },[])
   return (<form className='student__form'>
      <div className="student__content">
-        <label htmlFor="" className="student_label"></label>
-        <input type="text" className="student_input" />
+        <label htmlFor="studentEmail" className="student_label">Email</label>
+        <input id='studentEmail' type="email" className="student_input" />
       </div>
      <div className="student__content">
-        <label htmlFor="" className="student_label"></label>
-        <input type="text" className="student_input" />
+        <label htmlFor="studentPassword" className="student_label">Password</label>
+        <input id='studentPassword' type="password" className="student_input" />
       </div>
       <button className="student_btn">Login</button>
   </form>)

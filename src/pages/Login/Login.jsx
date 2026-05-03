@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import "./Login.css"
+import studentImg from '../../assets/icon/studentImgLogin.png'
+import adminImg from '../../assets/icon/adminImgLogin.png'
 
 function Login() {
   const location = useLocation()
@@ -10,7 +12,7 @@ function Login() {
     <section className="login">
       <div className="conteyner login__wraper">
         <div className="login__content">
-          <img src={login?.img} alt="" className="login_img" />
+          <img src={login.img == "studentImg"? studentImg : adminImg} alt="" className="login_img" />
           <h2 className="login_title">Welcome Back!</h2>
           <p className="login_text">{login?.text}</p>
         </div>
