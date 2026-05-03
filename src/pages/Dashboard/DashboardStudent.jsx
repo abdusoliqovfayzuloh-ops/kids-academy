@@ -17,7 +17,10 @@ function DashboardStudent() {
           <button className="hero_btn-profil">profil</button>
         </div>
         <div className="hero__bottom">
-          
+          <img src="" alt="" className="hero_img" />
+          <div className="hero__bottom-content">
+            
+          </div>
         </div>
       </div>
      </section>
