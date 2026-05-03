@@ -16,6 +16,8 @@ import Teacher from './components/Teacher/Teacher'
 import Student from './components/Student/Student'
 import StudentLogin from './components/StudentLogin/StudentLogin'
 import AdminLogin from './components/AdminLogin/AdminLogin'
+import PaymentsStudent from './pages/Payments/PaymentsStudent'
+import PaymentsAdmin from './pages/Payments/PaymentsAdmin'
 
 function App() {
   const router = createBrowserRouter([
@@ -82,6 +84,10 @@ function App() {
               element: <Student/>
             }
           ]
+        },
+        {
+          path: "payments",
+          element: <PaymentsAdmin/>
         }
       ]
     },
@@ -108,6 +114,10 @@ function App() {
         {
           path: "food",
           element: <FoodStudent/>
+        },
+        {
+          path: "payments",
+          element: <PaymentsStudent/>
         }
       ]
     }
