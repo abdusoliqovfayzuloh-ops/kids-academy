@@ -25,6 +25,18 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
+    animation: linear 3s infinite loginImg;
+}
+@keyframes loginImg{
+    0%{
+       transform: rotate(-20deg);
+    }
+    50%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    }
 }
 .login_title{
     color: white;
@@ -56,7 +68,7 @@
    align-items: center;
    justify-content: center;
    font-size: var(--text-size);
-   font-weight: var(--text-weight);
+   font-weight: var(--subtitle-weight);
 }
 .login_link{
    background: rgba(255, 255, 255, 0.428);
@@ -70,5 +82,5 @@
    align-items: center;
    justify-content: center;
    font-size: var(--text-size);
-   font-weight: var(--text-weight);
+   font-weight: var(--subtitle-weight);
 }
