@@ -42,11 +42,11 @@ function AdminLogin() {
   }}>
      <div className="admin__content">
         <label htmlFor="adminEmail" className="admin_label">Email</label>
-        <input id='adminEmail' type="email" className="admin_input" ref={inputEmail}/>
+        <input id='adminEmail' placeholder='Enter your email' type="email" className="admin_input" ref={inputEmail}/>
       </div>
      <div className="admin__content">
         <label htmlFor="adminPassword" className="admin_label">Password</label>
-        <input id='adminPassword' type="password" className="admin_input" ref={inputPassword}/>
+        <input id='adminPassword' placeholder='Enter your password' type="password" className="admin_input" ref={inputPassword}/>
       </div>
       <button className="admin_btn">Login as Admin</button>
   </form>)

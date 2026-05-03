@@ -42,11 +42,11 @@ function StudentLogin() {
   }}>
      <div className="student__content">
         <label htmlFor="studentEmail" className="student_label">Email</label>
-        <input id='studentEmail' type="email" className="student_input" ref={inputEmail}/>
+        <input id='studentEmail' placeholder='Enter your email' type="email" className="student_input" ref={inputEmail}/>
       </div>
      <div className="student__content">
         <label htmlFor="studentPassword" className="student_label">Password</label>
-        <input id='studentPassword' type="password" className="student_input" ref={inputPassword}/>
+        <input id='studentPassword' placeholder='Enter your password' type="password" className="student_input" ref={inputPassword}/>
       </div>
       <button className="student_btn">Login</button>
   </form>)
