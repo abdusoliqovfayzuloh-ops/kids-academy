@@ -14,6 +14,8 @@ import FoodAdmin from './pages/Food/FoodAdmin'
 import Users from './pages/Users/Users'
 import Teacher from './components/Teacher/Teacher'
 import Student from './components/Student/Student'
+import StudentLogin from './components/StudentLogin/StudentLogin'
+import AdminLogin from './components/AdminLogin/AdminLogin'
 
 function App() {
   const router = createBrowserRouter([
@@ -23,7 +25,21 @@ function App() {
     },
     {
       path: "/login",
-      element: <Login/>
+      element: <Login/>,
+      children: [
+        {
+          index: true,
+          element: <Navigate to={"student"}/>
+        },
+        {
+          path: "student",
+          element: <StudentLogin/>
+        },
+        {
+          path: "admin",
+          element: <AdminLogin/>
+        }
+      ]
     },
     {
       path: "/layoutAdmin",
