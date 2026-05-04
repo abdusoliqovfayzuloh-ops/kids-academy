@@ -28,9 +28,18 @@ function DashboardStudent() {
         <div className="hero__content">
           <h1 className="hero_title">Hello, {student?.name}!</h1>
           <ul className="hero__list">
-            <li className="hero_item"></li>
-            <li className="hero_item"></li>
-            <li className="hero_item"></li>
+            <li className="hero_item">
+              <strong className="hero_strong">Your email:</strong>
+              <p className="hero_text">{profile?.email}</p>
+            </li>
+            <li className="hero_item">
+              <strong className="hero_strong">Your age:</strong>
+              <p className="hero_text">{profile?.age}</p>
+            </li>
+            <li className="hero_item">
+              <strong className="hero_strong">Your class:</strong>
+              <p className="hero_text">{profile?.class}</p>
+            </li>
           </ul>
         </div>
         <img width={350} src={profile?.avatar == ""? userIcon : profile?.avatar} alt="" className="hero_img" />
