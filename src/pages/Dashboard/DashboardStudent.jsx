@@ -1,34 +1,39 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './DashboardStudent.css'
 import userIcon from "../../assets/icon/userIcon.png"
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function DashboardStudent() {
+  const [profile, setProfile] = useState({})
   const student = JSON.parse(localStorage.getItem("studentObject"))
   const navigate = useNavigate("")
+
+  async function getProfile(){
+    try{
+      const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil.json")
+      const data = await res.data.find((profile) => profile.profileId == student?.profileId)
+      console.log(data)
+      setProfile(data)
+    }catch(err){
+      console.log(err.message)
+    }
+  }
   useEffect(() => {
-    console.log(student)
+    getProfile()
   },[])
   return (<main className='site__main'>
      <section className="hero">
       <div className="conteyner hero__wraper">
-        <div className="hero__top">
-          <div className="hero__top-content">
-            <p className="hero_text">Welcome back!</p>  
-            <h3 className="hero_title">{student?.name}</h3>
-          </div>
-          <button onClick={() => {
-            navigate("/layoutStudent/profile")
-          }} className="hero_btn-profil"><img width={60} src={userIcon} alt="" /></button>
+        <div className="hero__content">
+          <h1 className="hero_title">Hello, {student?.name}!</h1>
+          <ul className="hero__list">
+            <li className="hero_item"></li>
+            <li className="hero_item"></li>
+            <li className="hero_item"></li>
+          </ul>
         </div>
-        <div className="hero__bottom">
-          <img width={90} src={userIcon} alt="" className="hero_avatar" />
-          <div className="hero__bottom-content">
-            <p onClick={() => {
-              navigate("/layoutStudent/profile")
-            }}>profil</p>
-          </div>
-        </div>
+        <img width={350} src={profile?.avatar == ""? userIcon : profile?.avatar} alt="" className="hero_img" />
       </div>
      </section>
      <section className="actions">
