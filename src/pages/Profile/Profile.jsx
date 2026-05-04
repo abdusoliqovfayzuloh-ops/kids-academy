@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Sidebar() {
+function Profile() {
   return (<>
   
   </>)
 }
 
-export default Sidebar
+export default Profile

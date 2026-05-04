@@ -18,6 +18,7 @@ import StudentLogin from './components/StudentLogin/StudentLogin'
 import AdminLogin from './components/AdminLogin/AdminLogin'
 import PaymentsStudent from './pages/Payments/PaymentsStudent'
 import PaymentsAdmin from './pages/Payments/PaymentsAdmin'
+import Profile from './pages/Profile/Profile'
 
 function App() {
   const router = createBrowserRouter([
@@ -118,6 +119,10 @@ function App() {
         {
           path: "payments",
           element: <PaymentsStudent/>
+        },
+        {
+          path: "profile",
+          element: <Profile/>
         }
       ]
     }
