@@ -40,6 +40,10 @@ function DashboardStudent() {
               <strong className="hero_strong">Your class:</strong>
               <p className="hero_text">{profile?.class}</p>
             </li>
+            <li className="hero_item">
+              <strong className="hero_strong">Your phote:</strong>
+              <p className="hero_text">{profile?.phone}</p>
+            </li>
           </ul>
         </div>
         <img width={350} src={profile?.avatar == ""? userIcon : profile?.avatar} alt="" className="hero_img" />
