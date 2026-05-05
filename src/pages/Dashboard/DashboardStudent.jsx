@@ -34,15 +34,23 @@ function DashboardStudent() {
             </li>
             <li className="hero_item">
               <strong className="hero_strong">Your age:</strong>
-              <p className="hero_text">{profile?.age}</p>
+              <p className="hero_text">{profile?.age} years old</p>
             </li>
             <li className="hero_item">
               <strong className="hero_strong">Your class:</strong>
               <p className="hero_text">{profile?.class}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Your phote:</strong>
+              <strong className="hero_strong">Your phone:</strong>
               <p className="hero_text">{profile?.phone}</p>
+            </li>
+            <li className="hero_item">
+              <strong className="hero_strong">Your teacher:</strong>
+              <p className="hero_text">{profile?.teacher}</p>
+            </li>
+            <li className="hero_item">
+              <strong className="hero_strong">Teacher phone:</strong>
+              <p className="hero_text">{profile?.teacherPhote}</p>
             </li>
           </ul>
         </div>

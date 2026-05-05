@@ -33,6 +33,33 @@
     padding: 0;
 }
 .hero_img{
-    border-radius: 50%;
-    border: 15px solid rgba(255, 255, 255, 0.565);
+    border-radius: 40px;
+    border: 15px solid rgba(255, 255, 255, 0.669);
+    transition: linear 0.3s;
+}
+.hero_img:hover{
+    box-shadow: 1px 1px 4px 0px grey;
+}
+.hero__list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 70px);
+    padding-top: 45px;
+}
+.hero_item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+.hero_strong{
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+}
+.hero_text{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
 }
