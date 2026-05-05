@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './DashboardStudent.css'
-import userIcon from "../../assets/icon/userIcon.png"
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import LinkBord from '../../components/LinkBord/LinkBord'
+import paymentIcon from '../../assets/icon/payment Icon.png'
+import foodIcon from '../../assets/icon/food Icon.png'
+import userIcon from '../../assets/icon/user Icon.png'
+import shop from '../../assets/icon/shop.png'
+import classIcon from '../../assets/icon/class.png'
+import infoIcon from '../../assets/icon/about.png'
+import telegram from '../../assets/icon/telegram.png'
 
 function DashboardStudent() {
   const [profile, setProfile] = useState({})
@@ -58,8 +65,26 @@ function DashboardStudent() {
       </div>
      </section>
      <section className="actions">
-      <div className="conteyner actions__wraper">
-        
+      <div className="conteyner">
+        <h2 className="actions_title">Quick Actions</h2>
+        <div className="actions__wraper">
+          <LinkBord img={paymentIcon} title={"Payment"} navigateUrl={"/layoutStudent/payment"}/>
+          <LinkBord img={foodIcon} title={"Foot menu"} navigateUrl={"/layoutStudent/food"}/>
+          <LinkBord img={userIcon} title={"Profile"} navigateUrl={"/layoutStudent/profil"}/>
+          <LinkBord img={shop} title={"Shop"} navigateUrl={"/layoutStudent/shop"}/>
+          <LinkBord img={classIcon} title={"Class"} navigateUrl={"/layoutStudent/class"}/>
+          <LinkBord img={infoIcon} title={"Info"} navigateUrl={"/layoutStudent/info"}/>
+        </div>
+        <div className="actions__telegram" onClick={(evt) => {
+          evt.preventDefault()
+          window.location.href = ""
+        }}>
+          <img width={90} src={telegram} alt="" className="telegram_img" />
+          <div className="telegram__content">
+            <h4 className="telegram_title">Join telegram</h4>
+            <p className="telegram_text">t.me/kids_kids_kids_kids</p>
+          </div>
+        </div>
       </div>
      </section>
   </main>)

@@ -1,16 +1,18 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./HeaderStudent.css"
+import logo from '../../assets/icon/logo.png'
 
 function Header({setIsOpenSidebar, isOpenSidebar}) {
   const navigate = useNavigate("")
 
   return (<header className='site__header'>
     <div className="conteyner header__wraper">
-      <div className="header__logo">
+      {/* <div className="header__logo">
         <img src="img" alt="" className="header_logo" />
         <h2 className="header_title">kids academy <br /> <span style={{fontSize: 12}}>@gmail.com</span></h2>
-      </div>
+      </div> */}
+      <img width={200} src={logo} alt="" />
       <div className="header__btn">
         <button onClick={(evt) => {
            evt.preventDefault()
@@ -20,6 +22,10 @@ function Header({setIsOpenSidebar, isOpenSidebar}) {
            evt.preventDefault()
            navigate("/layoutStudent/profile")
         }} className="header_btn">profil</button>
+        <button onClick={(evt) => {
+           evt.preventDefault()
+           navigate("/login")
+        }} className="header_btn">login</button>
       </div>
     </div>
   </header>)
