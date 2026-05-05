@@ -10,6 +10,7 @@ import shop from '../../assets/icon/shop.png'
 import classIcon from '../../assets/icon/class.png'
 import infoIcon from '../../assets/icon/about.png'
 import telegram from '../../assets/icon/telegram.png'
+import instagram from '../../assets/icon/instagram.png'
 
 function DashboardStudent() {
   const [profile, setProfile] = useState({})
@@ -67,6 +68,16 @@ function DashboardStudent() {
      <section className="actions">
       <div className="conteyner">
         <h2 className="actions_title">Quick Actions</h2>
+        <div className="actions__instagram" onClick={(evt) => {
+          evt.preventDefault()
+          window.location.href = "https://t.me/KIDS_ACADEMY777"
+        }}>
+          <img width={90} src={instagram} alt="" className="instagram_img" />
+          <div className="instagram__content">
+            <h4 className="instagram_title">Join telegram</h4>
+            <p className="instagram_text">t.me/kids_kids_kids_kids</p>
+          </div>
+        </div>
         <div className="actions__wraper">
           <LinkBord img={paymentIcon} title={"Payment"} navigateUrl={"/layoutStudent/payments"}/>
           <LinkBord img={foodIcon} title={"Foot menu"} navigateUrl={"/layoutStudent/food"}/>
