@@ -64,17 +64,6 @@
     font-size: 16px;
     font-weight: 400;
 }
-@keyframes scrolAnimation{
-    0%{
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-
 .actions{
     padding-top: 80px;
 }
@@ -101,6 +90,7 @@
     justify-content: flex-start;
     gap: 10px;
     padding-left: 20px;
+    animation: ease-in 1s scrolAnimation;
 }
 .telegram_title{
     color: white;
@@ -112,4 +102,15 @@
     color: white;
     font-size: var(--text-size);
     font-weight: var(--text-weight);
+}
+
+@keyframes scrolAnimation{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }

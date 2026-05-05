@@ -68,16 +68,16 @@ function DashboardStudent() {
       <div className="conteyner">
         <h2 className="actions_title">Quick Actions</h2>
         <div className="actions__wraper">
-          <LinkBord img={paymentIcon} title={"Payment"} navigateUrl={"/layoutStudent/payment"}/>
+          <LinkBord img={paymentIcon} title={"Payment"} navigateUrl={"/layoutStudent/payments"}/>
           <LinkBord img={foodIcon} title={"Foot menu"} navigateUrl={"/layoutStudent/food"}/>
-          <LinkBord img={userIcon} title={"Profile"} navigateUrl={"/layoutStudent/profil"}/>
+          <LinkBord img={userIcon} title={"Profile"} navigateUrl={"/layoutStudent/profile"}/>
           <LinkBord img={shop} title={"Shop"} navigateUrl={"/layoutStudent/shop"}/>
           <LinkBord img={classIcon} title={"Class"} navigateUrl={"/layoutStudent/class"}/>
-          <LinkBord img={infoIcon} title={"Info"} navigateUrl={"/layoutStudent/info"}/>
+          <LinkBord img={infoIcon} title={"Info"} navigateUrl={"/layoutStudent/information"}/>
         </div>
         <div className="actions__telegram" onClick={(evt) => {
           evt.preventDefault()
-          window.location.href = ""
+          window.location.href = "https://t.me/KIDS_ACADEMY777"
         }}>
           <img width={90} src={telegram} alt="" className="telegram_img" />
           <div className="telegram__content">

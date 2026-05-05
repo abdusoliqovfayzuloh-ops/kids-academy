@@ -21,18 +21,22 @@
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
+    cursor: pointer;
 }
 .header_logo{
-    background: rgba(255, 255, 255, 0.343);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    backdrop-filter: blur(10px);
+    width: 70px;
+    height: 70px;
 }
 .header_title{
     color: white;
-    font-size: var(--subtitle-size);
-    font-weight: var(--subtitle-weight);
+    font-size:24px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2px;
 }
 .header_btn{
     background: rgba(255, 255, 255, 0.343);

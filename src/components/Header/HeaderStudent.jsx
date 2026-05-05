@@ -8,11 +8,12 @@ function Header({setIsOpenSidebar, isOpenSidebar}) {
 
   return (<header className='site__header'>
     <div className="conteyner header__wraper">
-      {/* <div className="header__logo">
-        <img src="img" alt="" className="header_logo" />
-        <h2 className="header_title">kids academy <br /> <span style={{fontSize: 12}}>@gmail.com</span></h2>
-      </div> */}
-      <img width={200} src={logo} alt="" />
+      <div className="header__logo" onClick={() => {
+        navigate("/layoutStudent/dashboard")
+      }}>
+        <img src={logo} alt="" className="header_logo" />
+        <h2 className="header_title">Kids academy <span style={{fontSize: 12, fontWeight: 400}}>Eevery child has potential</span></h2>
+      </div>
       <div className="header__btn">
         <button onClick={(evt) => {
            evt.preventDefault()
