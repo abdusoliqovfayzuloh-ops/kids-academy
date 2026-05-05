@@ -1,5 +1,4 @@
 import React from 'react'
-import "./LinkBord.css"
 import { useNavigate } from 'react-router-dom'
 
 function LinkBord({img, title, navigateUrl}) {
