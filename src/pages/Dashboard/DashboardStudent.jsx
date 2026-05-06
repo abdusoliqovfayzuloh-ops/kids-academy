@@ -41,6 +41,10 @@ function DashboardStudent() {
               <p className="hero_text">{profile?.email}</p>
             </li>
             <li className="hero_item">
+              <strong className="hero_strong">Your name:</strong>
+              <p className="hero_text">{profile?.childName}</p>
+            </li>
+            <li className="hero_item">
               <strong className="hero_strong">Your age:</strong>
               <p className="hero_text">{profile?.age} years old</p>
             </li>

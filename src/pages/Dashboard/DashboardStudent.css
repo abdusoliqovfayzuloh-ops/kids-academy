@@ -4,7 +4,6 @@
     height: 500px;
     border-bottom-left-radius: 100px ;
     border-bottom-right-radius: 100px ;
-    margin-top: -18px;
 }
 .hero__wraper{
     display: flex;
@@ -44,8 +43,8 @@
 .hero__list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 70px);
-    padding-top: 45px;
+    grid-template-rows: repeat(3, 70px);
+    padding-top: 25px;
 }
 .hero_item{
     display: flex;
@@ -109,7 +108,7 @@
     width: 100%;
     height: 120px;
     border-radius: 20px;
-    margin:40px 0px;
+    margin:40px 0 10px 0; 
     padding-left: 30px;
 
     display: flex;
@@ -167,15 +166,15 @@
 
 @keyframes linkBord {
     0% {
-        transform: scale(0.1);
+        transform: scale(1%);
         opacity: 0;
     }
     50%{
-        transform: scale(0.3);
+        transform: scale(30%);
         opacity: 1;
     }
     100% {
-        transform: scale(1);
+        transform: scale(100%);
     }
 }
 @keyframes scrolAnimation{

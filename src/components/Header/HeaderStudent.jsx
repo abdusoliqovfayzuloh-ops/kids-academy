@@ -21,10 +21,6 @@ function Header({setIsOpenSidebar, isOpenSidebar}) {
         }} className="header_btn">open sidebar</button>
         <button onClick={(evt) => {
            evt.preventDefault()
-           navigate("/layoutStudent/profile")
-        }} className="header_btn">profil</button>
-        <button onClick={(evt) => {
-           evt.preventDefault()
            navigate("/login")
         }} className="header_btn">login</button>
       </div>
