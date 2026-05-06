@@ -21,16 +21,18 @@ function Profile() {
     }
   }
   async function patchProfile() {
-    try{
-      const res = await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil.json/1`,{
-       avatar: avatarInput.current.value,
-       childName: nameInput.current.value,
-       age: ageInput.current.value,
-       email: emailInput.current.value,
-       phone: phoneInput.current.value
-      })
-      console.log(res)
-      getProfile()
+    try {
+
+      const res = await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil/${profile.firebaseKey}.json`,
+        {
+          avatar: avatarInput.current.value,
+          childName: nameInput.current.value,
+          age: ageInput.current.value,
+          email: emailInput.current.value,
+          phone: phoneInput.current.value,
+        })
+      
+      getProfile() 
     }catch(err){
       console.log(err)
     }
