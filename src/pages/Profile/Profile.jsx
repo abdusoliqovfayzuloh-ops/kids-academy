@@ -14,11 +14,11 @@ function Profile() {
   async function getProfile() {
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil.json")
-      // const data = await res.data.find((profile) => profile.profileId == student?.profileId)
+      const profiles = await Object.values(res.data)
+      const data = await profils.find((profile) => profile.profileId == student?.profileId)
       console.log(res.data)
-      const profiles = await [...res.data]
       console.log(profiles)
-      // setProfile(data)
+      setProfile(data)
     }catch(err){
       console.log(err)
     }
