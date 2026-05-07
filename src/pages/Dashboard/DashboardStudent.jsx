@@ -84,7 +84,7 @@ function DashboardStudent() {
         </div>
         <div className="actions__wraper">
           <LinkBord img={paymentIcon} title={"Payment"} navigateUrl={"/layoutStudent/payments"}/>
-          <LinkBord img={foodIcon} title={"Foot menu"} navigateUrl={"/layoutStudent/food"}/>
+          <LinkBord img={foodIcon} title={"Food menu"} navigateUrl={"/layoutStudent/food"}/>
           <LinkBord img={userIcon} title={"Profile"} navigateUrl={"/layoutStudent/profile"}/>
           <LinkBord img={shop} title={"Shop"} navigateUrl={"/layoutStudent/shop"}/>
           <LinkBord img={classIcon} title={"Class"} navigateUrl={"/layoutStudent/class"}/>

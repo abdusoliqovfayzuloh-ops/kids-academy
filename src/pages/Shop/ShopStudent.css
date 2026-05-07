@@ -1,0 +1,7 @@
+.hero__wraper-shop{
+    background: #ffffff68;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 450px;
+    border-radius: 30px;
+}
