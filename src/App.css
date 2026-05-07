@@ -41,3 +41,11 @@ body ul,ol{
 body button{
     cursor: pointer;
 }
+input{
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+input:focus {
+    outline: none;
+    border-color: #4ecdc4;
+    box-shadow: 0 0 0 5px rgba(78, 205, 196, 0.15);
+}

@@ -27,9 +27,15 @@ function FoodStudent() {
             <div className='food-list'>
               {Object.entries(food).map(([key, item]) => (
                 <div key={key} className='food-item'>
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  <img src={item.image} alt="" />
+                  <div className='text-content'>
+                    <h3>{item.name}</h3>
+                    <p>{item.mealName}</p>
+                    <p>{item.calories}</p>
+                    <p>{item.day}</p>
+                  </div>
                 </div>
+          
               ))}
             </div>
           ) : (

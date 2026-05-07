@@ -15,9 +15,8 @@ function Profile() {
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil.json")
       const profiles = await Object.values(res.data)
-      const data = await profils.find((profile) => profile.profileId == student?.profileId)
-      console.log(res.data)
-      console.log(profiles)
+      const data = await profiles.find((profile) => profile.profileId == student?.profileId)
+      console.log(data)
       setProfile(data)
     }catch(err){
       console.log(err)
@@ -25,15 +24,17 @@ function Profile() {
   }
   async function patchProfile() {
     try {
-      const res = await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil/${profile?.profileId}.json`,
+      const res = await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil/0.json`,
         {
+          ...profile,
           avatar: avatarInput.current.value,
           childName: nameInput.current.value,
           age: ageInput.current.value,
           email: emailInput.current.value,
           phone: phoneInput.current.value,
-        })
-      
+        }
+      )
+      console.log(res.data)
       getProfile() 
     }catch(err){
       console.log(err)
@@ -48,7 +49,7 @@ function Profile() {
       <div className="conteyner hero__wraper-profile">
         <img width={355} src={profile?.avatar} alt="" className="hero_img" />
         <div className="hero__inner">
-         <h1 className="hero_title">{profile?.childName} Profile</h1>
+         <h1 className="hero_title">{profile?.childName}</h1>
          <p className="hero_text">this is your profile</p>
         </div>
       </div>
@@ -61,25 +62,23 @@ function Profile() {
         }} className="profile__form">
           <div className="profile__content">
             <label htmlFor="childName" className="profile_label">Change your child name:</label>
-            <input id='childName' type="text" className="profile_input" value={profile?.childName} ref={nameInput}/>
+            <input id='childName' type="text" className="profile_input" defaultValue={profile?.childName} ref={nameInput}/>
           </div>
           <div className="profile__content">
             <label htmlFor="childAge" className="profile_label">Change your child age:</label>
-            <input id='childAge' type="number" className="profile_input" value={profile?.age} ref={ageInput}/>
+            <input id='childAge' type="number" className="profile_input" defaultValue={profile?.age} ref={ageInput}/>
           </div>
           <div className="profile__content">
-            <div className="profile__inner">
-              <label htmlFor="childPhoto" className="profile_label">Change your child photo url:</label>
-              <input id='childPhoto' type="text" className="profile_input" value={profile?.avatar} ref={avatarInput}/>
-            </div>
+            <label htmlFor="childPhoto" className="profile_label">Change your child photo url:</label>
+            <input id='childPhoto' type="text" className="profile_input" defaultValue={profile?.avatar} ref={avatarInput}/>
           </div>
           <div className="profile__content">
             <label htmlFor="phoneNumber" className="profile_label">Change your phone number:</label>
-            <input id='phoneNumber' type="number" className="profile_input" value={profile?.phone} ref={phoneInput}/>
+            <input id='phoneNumber' type="text" className="profile_input" defaultValue={profile?.phone} ref={phoneInput}/>
           </div>
           <div className="profile__content">
             <label htmlFor="email" className="profile_label">Change your email:</label>
-            <input id='email' type="email" className="profile_input" value={profile?.email} ref={emailInput}/>
+            <input id='email' type="email" className="profile_input" defaultValue={profile?.email} ref={emailInput}/>
           </div>
           <button className="profil_btn">submit</button>
         </form>

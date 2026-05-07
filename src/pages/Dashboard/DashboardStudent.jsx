@@ -20,8 +20,8 @@ function DashboardStudent() {
   async function getProfile(){
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil.json")
-      const data = await res.data.find((profile) => profile.profileId == student?.profileId)
-      console.log(data)
+      const profiles = await Object.values(res.data)
+      const data = await profiles.find((profile) => profile.profileId == student?.profileId)
       setProfile(data)
     }catch(err){
       console.log(err.message)

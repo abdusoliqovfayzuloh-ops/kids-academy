@@ -4,6 +4,7 @@
     height: 500px;
     border-bottom-left-radius: 100px ;
     border-bottom-right-radius: 100px ;
+    margin-top: -30px;
 }
 .hero__wraper{
     display: flex;
@@ -33,7 +34,7 @@
     padding: 0;
 }
 .hero_img{
-    border-radius: 50px;
+    border-radius: 50%;
     border: 15px solid rgba(255, 255, 255, 0.669);
     transition: linear 0.3s;
 }

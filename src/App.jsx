@@ -20,6 +20,7 @@ import PaymentsStudent from './pages/Payments/PaymentsStudent'
 import PaymentsAdmin from './pages/Payments/PaymentsAdmin'
 import Profile from './pages/Profile/Profile'
 import InfoStudent from './pages/Info/InfoStudent'
+import InfoDetail from './components/InfoDetail/InfoDetail'
 
 function App() {
   const router = createBrowserRouter([
@@ -128,6 +129,10 @@ function App() {
         {
           path: "information",
           element: <InfoStudent/>
+        },
+        {
+          path: "information/:id",
+          element: <InfoDetail/>
         }
       ]
     }
