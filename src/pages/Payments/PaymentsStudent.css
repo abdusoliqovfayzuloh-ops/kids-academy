@@ -4,11 +4,6 @@
   background: #f6f8fb;
 }
 
-.payments-section .container {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
 .payments-hero {
   background: linear-gradient(135deg, #18b58b 0%, #0fa3f0 100%);
   border-radius: 32px;

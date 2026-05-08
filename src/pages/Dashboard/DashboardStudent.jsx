@@ -34,34 +34,34 @@ function DashboardStudent() {
      <section className="hero">
       <div className="conteyner hero__wraper">
         <div className="hero__content">
-          <h1 className="hero_title">Hello, {student?.name}!</h1>
+          <h1 className="hero_title">Salom, {student?.name}!</h1>
           <ul className="hero__list">
             <li className="hero_item">
-              <strong className="hero_strong">Your email:</strong>
+              <strong className="hero_strong">Sizning email:</strong>
               <p className="hero_text">{profile?.email}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Your name:</strong>
+              <strong className="hero_strong">Sizning ismingiz:</strong>
               <p className="hero_text">{profile?.childName}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Your age:</strong>
-              <p className="hero_text">{profile?.age} years old</p>
+              <strong className="hero_strong">Sizning yoshingiz:</strong>
+              <p className="hero_text">{profile?.age} yoshdasiz</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Your class:</strong>
+              <strong className="hero_strong">Sizning guruhingiz:</strong>
               <p className="hero_text">{profile?.class}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Your phone:</strong>
+              <strong className="hero_strong">Sizning telefon raqamingiz:</strong>
               <p className="hero_text">{profile?.phone}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Your teacher:</strong>
+              <strong className="hero_strong">Sizning oqtuvchingiz:</strong>
               <p className="hero_text">{profile?.teacher}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Teacher phone:</strong>
+              <strong className="hero_strong">ustoz telefon raqami:</strong>
               <p className="hero_text">{profile?.teacherPhote}</p>
             </li>
           </ul>
@@ -71,7 +71,7 @@ function DashboardStudent() {
      </section>
      <section className="actions">
       <div className="conteyner">
-        <h2 className="actions_title">Quick Actions</h2>
+        <h2 className="actions_title">Bo'limlar</h2>
         <div className="actions__instagram" onClick={(evt) => {
           evt.preventDefault()
           window.location.href = "https://www.instagram.com/kids__academy1?igsh=MTZuN3R6MmNsa3pndQ%3D%3D&utm_source=qr"
@@ -83,12 +83,12 @@ function DashboardStudent() {
           </div>
         </div>
         <div className="actions__wraper">
-          <LinkBord img={paymentIcon} title={"Payment"} navigateUrl={"/layoutStudent/payments"}/>
-          <LinkBord img={foodIcon} title={"Food menu"} navigateUrl={"/layoutStudent/food"}/>
-          <LinkBord img={userIcon} title={"Profile"} navigateUrl={"/layoutStudent/profile"}/>
-          <LinkBord img={shop} title={"Shop"} navigateUrl={"/layoutStudent/shop"}/>
-          <LinkBord img={classIcon} title={"Class"} navigateUrl={"/layoutStudent/class"}/>
-          <LinkBord img={infoIcon} title={"Info"} navigateUrl={"/layoutStudent/information"}/>
+          <LinkBord img={paymentIcon} title={"To'lovlar"} navigateUrl={"/layoutStudent/payments"}/>
+          <LinkBord img={foodIcon} title={"Ovqat menu"} navigateUrl={"/layoutStudent/food"}/>
+          <LinkBord img={userIcon} title={"Profil"} navigateUrl={"/layoutStudent/profile"}/>
+          <LinkBord img={shop} title={"Magazin"} navigateUrl={"/layoutStudent/shop"}/>
+          <LinkBord img={classIcon} title={"Guruh"} navigateUrl={"/layoutStudent/class"}/>
+          <LinkBord img={infoIcon} title={"Malumotlar"} navigateUrl={"/layoutStudent/information"}/>
         </div>
         <div className="actions__telegram" onClick={(evt) => {
           evt.preventDefault()
