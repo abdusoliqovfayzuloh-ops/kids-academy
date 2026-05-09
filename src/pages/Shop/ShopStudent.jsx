@@ -20,7 +20,9 @@ function ShopStudent() {
     try{
       const res = await axios.get('https://kindergarten-4d40e-default-rtdb.firebaseio.com/Score.json')
       const scores = await Object.values(res.data)
+      console.log(scores)
       const data = scores.find((score) => score.id == studentObject?.id)
+      console.log(data)
       setUserCoins(data.point)
     }catch(err){
       console.log(err)

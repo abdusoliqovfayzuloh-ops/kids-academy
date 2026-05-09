@@ -14,6 +14,7 @@ import instagram from '../../assets/icon/instagram.png'
 
 function DashboardStudent() {
   const [profile, setProfile] = useState({})
+  const [group, setGroup] = useState({})
   const student = JSON.parse(localStorage.getItem("studentObject"))
   const navigate = useNavigate("")
 
@@ -27,8 +28,20 @@ function DashboardStudent() {
       console.log(err.message)
     }
   }
+  async function getGroup(){
+    try{
+      const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Group.json")
+      const groups = Object.values(res.data)
+      const data = groups.find((group) => group.group == student?.group)
+      console.log(data)
+      setGroup(data)
+    }catch(err){
+      console.log(err.message)
+    }
+  }
   useEffect(() => {
     getProfile()
+    getGroup()
   },[])
   return (<main className='site__main'>
      <section className="hero">
@@ -53,12 +66,12 @@ function DashboardStudent() {
               <p className="hero_text">{profile?.number}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">Sizning oqtuvchingiz:</strong>
-              <p className="hero_text">narsa</p>
+              <strong className="hero_strong">Sizning o'qtuvchingiz:</strong>
+              <p className="hero_text">{group?.teacher}</p>
             </li>
             <li className="hero_item">
-              <strong className="hero_strong">ustoz telefon raqami:</strong>
-              <p className="hero_text">narsa</p>
+              <strong className="hero_strong">O'qtuvchi telefon raqami:</strong>
+              <p className="hero_text">{group?.phone}</p>
             </li>
           </ul>
         </div>
