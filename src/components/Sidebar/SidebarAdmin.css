@@ -1,7 +1,8 @@
 .admin__sidebar{
     background: linear-gradient(135deg, rgb(0, 157, 255) 40%, rgba(255, 166, 0, 0.425) 100%);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 19;
 
     display: flex;
@@ -44,14 +45,29 @@
     backdrop-filter: blur(5px);
     color: #fff;
     font-weight: 600;
-    animation: linkBorder linear 0.2s;
+    animation: linkBorderStart linear 0.2s;
     border-left: 4px solid #fff;
+    transition: 0.3s linear;
 }
-@keyframes linkBorder{
+.sidebar_item .notActive{
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s linear;
+    animation: linkBorderEnd linear 0.2s;
+}
+@keyframes linkBorderStart{
     0%{
         border-left: 0px solid #fff;
     }
     100%{
         border-left: 4px solid #fff;
+    }
+}
+@keyframes linkBorderEnd{
+    0%{
+        border-left: 4px solid #fff;
+    }
+    100%{
+        border-left: 0px solid #fff;
     }
 }

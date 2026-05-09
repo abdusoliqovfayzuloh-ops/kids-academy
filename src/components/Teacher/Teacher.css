@@ -1,0 +1,83 @@
+.teachers__list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.teacher_item{
+    width: 100%;
+    min-height: 100px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s ease;
+}
+
+.teacher_item:hover{
+    transform: translateY(-5px);
+}
+
+.teacher__content{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.teacher_name{
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+.teacher_email{
+    font-size: 14px;
+    color: gray;
+}
+
+.teacher__info{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+.teacher_role{
+    padding: 6px 14px;
+    border-radius: 10px;
+
+    background: rgba(0, 157, 255, 0.12);
+    color: rgb(0, 157, 255);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.teacher_index{
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        rgb(0, 157, 255),
+        orange
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-weight: 700;
+}

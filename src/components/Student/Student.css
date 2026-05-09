@@ -1,0 +1,62 @@
+.students__list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.student_item{
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+.student_item:hover{
+    transform: translateY(-5px);
+}
+.student__info{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.student_avatar{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.student__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: -15px;
+}
+.student_name{
+    font-size: var(--subtitle-size);
+    font-weight: var(--subtitle-weight);
+    color: darkblue;
+}
+.student_email{
+    font-size: 14px;
+    color: gray;
+}
+.student__right{
+    text-align: right;
+}
+.student_span{
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    line-height: 28px;
+}

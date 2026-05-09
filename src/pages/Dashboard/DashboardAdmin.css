@@ -1,0 +1,102 @@
+.admin__main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.admin__hero{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 150px;
+    gap: 30px;
+}
+
+/* USERS SECTION */
+
+.users{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.users__list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.users_item{
+    list-style: none;
+    width: 100%;
+    height: 55px;
+}
+
+.activeStudent,
+.activeTeacher,
+.notActiveStudent,
+.notActiveTeacher{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: var(--subtitle-size);
+    font-weight: var(--subtitle-weight);
+
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.activeStudent:hover,
+.activeTeacher:hover,
+.notActiveStudent:hover,
+.notActiveTeacher:hover{
+    transform: translateY(-3px);
+}
+
+.activeStudent{
+    background: linear-gradient(
+        135deg,
+        lightgreen 10%,
+        rgb(0, 157, 255) 80%,
+        rgba(255, 166, 0, 0.55) 100%
+    );
+}
+
+.activeTeacher{
+    background: linear-gradient(
+        135deg,
+        rgb(0, 157, 255) 40%,
+        rgba(255, 166, 0, 0.425) 100%
+    );
+}
+
+.notActiveStudent{
+    background: linear-gradient(
+        135deg,
+        lightgreen 10%,
+        rgb(0, 157, 255) 80%,
+        rgba(255, 166, 0, 0.55) 100%
+    );
+
+    opacity: 0.5;
+}
+
+.notActiveTeacher{
+    background: linear-gradient(
+        135deg,
+        rgb(0, 157, 255) 40%,
+        rgba(255, 166, 0, 0.425) 100%
+    );
+
+    opacity: 0.5;
+}
