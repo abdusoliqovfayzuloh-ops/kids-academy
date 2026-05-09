@@ -40,24 +40,6 @@
 }
 .header_btn{
     background: rgba(255, 255, 255, 0.343);
-    width: 150px;
-    height: 40px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: none;
-    color: white;
-}
-.header_btn:nth-child(2){
-    background: rgba(255, 255, 255, 0.343);
-    width: 110px;
-    height: 40px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: none;
-    color: white;
-}
-.header_btn:nth-child(3){
-    background: rgba(255, 255, 255, 0.343);
     width: 130px;
     height: 40px;
     border-radius: 10px;

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import "./HeaderStudent.css"
 import logo from '../../assets/icon/logo.png'
 
-function Header({setIsOpenSidebar, isOpenSidebar}) {
+function Header() {
   const navigate = useNavigate("")
 
   return (<header className='site__header'>
@@ -15,10 +15,6 @@ function Header({setIsOpenSidebar, isOpenSidebar}) {
         <h2 className="header_title">Kids academy <span style={{fontSize: 12, fontWeight: 400}}>Eevery child has potential</span></h2>
       </div>
       <div className="header__btn">
-        <button onClick={(evt) => {
-           evt.preventDefault()
-           setIsOpenSidebar(!isOpenSidebar)
-        }} className="header_btn">open sidebar</button>
         <button onClick={(evt) => {
            evt.preventDefault()
            navigate("/login")

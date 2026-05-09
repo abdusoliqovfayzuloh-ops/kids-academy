@@ -2,18 +2,13 @@
   padding: 48px 0 32px;
   background: linear-gradient(180deg, #d6f0ff 0%, #f8fbff 45%, #ffffff 100%);
 }
-
-.shop-container {
-  max-width: 1260px;
-}
-
 .shop-hero {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 18px;
-  margin-bottom: 28px;
+  padding-bottom: 40px;
 }
 
 .shop-hero__coins {
@@ -55,30 +50,15 @@
 }
 
 .shop-hero__title-wrap {
-  flex: 1;
-  min-width: 290px;
-  text-align: center;
+  text-align: end;
 }
 
 .shop-title {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 0 auto 8px;
-  padding: 0 12px;
+  margin: 0 0 8px 0;
   font-size: 2.7rem;
   color: #0a3d91;
   letter-spacing: 0.02em;
   font-weight: 900;
-}
-
-.shop-title::before,
-.shop-title::after {
-  content: '⭐️';
-  font-size: 1.2rem;
-  color: #ffcb05;
 }
 
 .shop-subtitle {
@@ -86,17 +66,6 @@
   color: #234071;
   font-size: 1.05rem;
   font-weight: 600;
-}
-
-.shop-status {
-  text-align: center;
-  color: #475569;
-  font-size: 1rem;
-  margin-top: 16px;
-}
-
-.shop-error {
-  color: #c53030;
 }
 
 .shop-grid {
@@ -115,6 +84,7 @@
   flex-direction: column;
   min-height: 350px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .shop-card:hover {
@@ -146,13 +116,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 30px 24px 24px 24px;
 }
 
 .shop-card__media img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
+  width: 200px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .shop-card__icon {

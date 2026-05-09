@@ -76,7 +76,7 @@ function InfoStudent() {
     {selectedInfo && (
       <div className="info-modal-overlay" onClick={closeModal}>
         <div className="info-modal-content" onClick={(e) => e.stopPropagation()}>
-          <div className="info-modal-header">
+          <div className="info-modal-header"> 
             <h2 className="info-modal-title">{selectedInfo.name}</h2>
             <button className="info-modal-close" onClick={closeModal}>✕</button>
           </div>
@@ -87,40 +87,26 @@ function InfoStudent() {
           <div className="info-modal-details">
             <div className="info-modal-grid">
               <div className="info-modal-item">
-                <span className="info-modal-label">📍 CITY</span>
-                <p className="info-modal-value">{selectedInfo.city}</p>
+                <span className="info-modal-label">Lesson Start</span>
+                <p className="info-modal-value">{selectedInfo.data.lessonStart}</p> 
               </div>
               <div className="info-modal-item">
-                <span className="info-modal-label">📌 DISTRICT</span>
-                <p className="info-modal-value">{selectedInfo.district}</p>
+                <span className="info-modal-label">Lunch Time</span>
+                <p className="info-modal-value">{selectedInfo.data.lunchTime}</p>
               </div>
               <div className="info-modal-item">
-                <span className="info-modal-label">🏠 ADDRESS</span>
-                <p className="info-modal-value">{selectedInfo.address}</p>
+                <span className="info-modal-label">Breakfast Time</span>
+                <p className="info-modal-value">{selectedInfo.data.breakfastTime}</p>
               </div>
               <div className="info-modal-item">
-                <span className="info-modal-label">📧 EMAIL</span>
-                <p className="info-modal-value">{selectedInfo.email}</p>
+                <span className="info-modal-label">Quiet Time</span>
+                <p className="info-modal-value">{selectedInfo.data.quietTime}</p>
               </div>
               <div className="info-modal-item">
-                <span className="info-modal-label">📞 PHONE</span>
-                <p className="info-modal-value">{selectedInfo.phone}</p>
+                <span className="info-modal-label">Lesson End</span>
+                <p className="info-modal-value">{selectedInfo.data.lessonEnd}</p> 
               </div>
             </div>
-
-            {selectedInfo.schedule && selectedInfo.schedule.length > 0 && (
-              <div className="info-modal-schedule">
-                <h3 className="info-modal-schedule-title">📅 SCHEDULE</h3>
-                <div className="schedule-grid">
-                  {selectedInfo.schedule.map((item, idx) => (
-                    <div key={idx} className="schedule-item">
-                      <span className="schedule-time">{item.time}</span>
-                      <span className="schedule-activity">{item.activity}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

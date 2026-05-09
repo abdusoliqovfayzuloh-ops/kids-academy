@@ -27,24 +27,17 @@ function FoodStudent() {
       </section>
       <section className='food-section'>
         <div className='conteyner'>
-          {food && Object.keys(food).length > 0 ? (
-            <div className='food-list'>
-              {Object.entries(food).map(([key, item]) => (
-                <div key={key} className='food-item'>
-                  <img src={item.image} alt="" />
-                  <div className='text-content'>
-                    <h3>{item.name}</h3>
-                    <p>{item.mealName}</p>
-                    <p>{item.calories}</p>
-                    <p>{item.day}</p>
-                  </div>
+          <div className='food-list'>
+            {food.map((food) => (
+              <div key={food.id} className='food-item'>
+                <img src={food.foodImg} alt="" />
+                <div className='text-content'>
+                  <h3>{food.foodName}</h3>
+                  <p>{food.time}</p>
                 </div>
-          
-              ))}
-            </div>
-          ) : (
-            <p>No food items available</p>
-          )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>
