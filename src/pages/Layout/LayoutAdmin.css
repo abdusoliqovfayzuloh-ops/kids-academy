@@ -1,0 +1,28 @@
+.layout__admin{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 90px 1fr;
+    height: 100vh;
+    background: gainsboro;
+}
+.admin__header{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+}
+.admin__sidebar{
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    width: 100%;
+    height: 100%;
+}
+.admin__main{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+}

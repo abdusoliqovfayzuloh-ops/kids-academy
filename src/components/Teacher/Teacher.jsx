@@ -1,9 +1,11 @@
 import React from 'react'
 
 function Teacher() {
-  return (<>
-  
-  </>)
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
 export default Teacher

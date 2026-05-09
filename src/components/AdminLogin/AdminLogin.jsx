@@ -11,9 +11,10 @@ function AdminLogin() {
   async function getAdmin(email, password){
     try{
       const res = await axios.get(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json`)
-      const admin = await res.data.find((admin) => admin.email == email && admin.password == password)
+      const users = Object.values(res.data)
+      const admin = await users.find((admin) => admin.email == email && admin.password == password)
       
-      if(admin.role == "admin"){
+      if(admin.data.role == "admin"){
         navigate("/layoutAdmin/dashboard")
         localStorage.setItem("adminObject", JSON.stringify(admin))
       }else{

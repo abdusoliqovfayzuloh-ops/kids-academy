@@ -1,0 +1,11 @@
+.admin__header{
+    background: linear-gradient(135deg, rgb(0, 157, 255) 40%, rgba(255, 166, 0, 0.425) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 19;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+}

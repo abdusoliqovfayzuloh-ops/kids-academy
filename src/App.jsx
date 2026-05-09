@@ -11,7 +11,6 @@ import ClassAdmin from './pages/Classes/ClassAdmin'
 import ClassStudent from './pages/Classes/ClassStudent'
 import FoodStudent from './pages/Food/FoodStudent'
 import FoodAdmin from './pages/Food/FoodAdmin'
-import Users from './pages/Users/Users'
 import Teacher from './components/Teacher/Teacher'
 import Student from './components/Student/Student'
 import StudentLogin from './components/StudentLogin/StudentLogin'
@@ -55,23 +54,7 @@ function App() {
         },
         {
           path: "dashboard",
-          element: <DashboardAdmin/>
-        },
-        {
-          path: "shop",
-          element: <ShopAdmin/>
-        },
-        {
-          path: "class",
-          element: <ClassAdmin/>
-        }, 
-        {
-          path: "food",
-          element: <FoodAdmin/>
-        },
-        {
-          path: "users",
-          element: <Users/>,
+          element: <DashboardAdmin/>,
           children: [
             {
               index: true,
@@ -88,7 +71,19 @@ function App() {
           ]
         },
         {
-          path: "payments",
+          path: "shop",
+          element: <ShopAdmin/>
+        },
+        {
+          path: "class",
+          element: <ClassAdmin/>
+        }, 
+        {
+          path: "food",
+          element: <FoodAdmin/>
+        },
+        {
+          path: "payment",
           element: <PaymentsAdmin/>
         }
       ]
