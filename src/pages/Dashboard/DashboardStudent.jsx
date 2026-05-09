@@ -19,9 +19,9 @@ function DashboardStudent() {
 
   async function getProfile(){
     try{
-      const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profil.json")
-      const profiles = await Object.values(res.data)
-      const data = await profiles.find((profile) => profile.profileId == student?.profileId)
+      const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profile.json")
+      const profiles = Object.values(res.data)
+      const data = profiles.find((profile) => profile.id == student?.id)
       setProfile(data)
     }catch(err){
       console.log(err.message)
@@ -37,12 +37,8 @@ function DashboardStudent() {
           <h1 className="hero_title">Salom, {student?.name}!</h1>
           <ul className="hero__list">
             <li className="hero_item">
-              <strong className="hero_strong">Sizning email:</strong>
-              <p className="hero_text">{profile?.email}</p>
-            </li>
-            <li className="hero_item">
               <strong className="hero_strong">Sizning ismingiz:</strong>
-              <p className="hero_text">{profile?.childName}</p>
+              <p className="hero_text">{profile?.name}</p>
             </li>
             <li className="hero_item">
               <strong className="hero_strong">Sizning yoshingiz:</strong>
@@ -50,23 +46,23 @@ function DashboardStudent() {
             </li>
             <li className="hero_item">
               <strong className="hero_strong">Sizning guruhingiz:</strong>
-              <p className="hero_text">{profile?.class}</p>
+              <p className="hero_text">{student?.group}</p>
             </li>
             <li className="hero_item">
               <strong className="hero_strong">Sizning telefon raqamingiz:</strong>
-              <p className="hero_text">{profile?.phone}</p>
+              <p className="hero_text">{profile?.number}</p>
             </li>
             <li className="hero_item">
               <strong className="hero_strong">Sizning oqtuvchingiz:</strong>
-              <p className="hero_text">{profile?.teacher}</p>
+              <p className="hero_text">narsa</p>
             </li>
             <li className="hero_item">
               <strong className="hero_strong">ustoz telefon raqami:</strong>
-              <p className="hero_text">{profile?.teacherPhote}</p>
+              <p className="hero_text">narsa</p>
             </li>
           </ul>
         </div>
-        <img width={350} src={profile?.avatar == ""? userIcon : profile?.avatar} alt="" className="hero_img" />
+        <img width={350} src={profile?.image == ""? userIcon : profile?.image} alt="" className="hero_img" />
       </div>
      </section>
      <section className="actions">

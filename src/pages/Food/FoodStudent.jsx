@@ -20,9 +20,13 @@ function FoodStudent() {
 
   return (
     <main className='site__main'>
+      <section className="hero">
+        <div className="conteyner food__wraper">
+          <h1 className="food_title">Food Menu</h1>
+        </div>
+      </section>
       <section className='food-section'>
-        <div className='container'>
-          <h1>Food Menu</h1>
+        <div className='conteyner'>
           {food && Object.keys(food).length > 0 ? (
             <div className='food-list'>
               {Object.entries(food).map(([key, item]) => (

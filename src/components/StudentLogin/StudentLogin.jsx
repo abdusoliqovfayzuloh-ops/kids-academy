@@ -11,16 +11,18 @@ function StudentLogin() {
   async function getStudent(email, password){
     try{
       const res = await axios.get(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json`)
-      const student = await res.data.find((student) => student.email == email && student.password == password)
+      const students = Object.values(res.data) 
+      const data = students.find((student) => student.password == password && student.email == email)
+      console.log(data.data)
       
-      if(student.role == "student"){
+      if(data.data.role == "student"){
         navigate("/layoutStudent/dashboard")
-        localStorage.setItem("studentObject", JSON.stringify(student))
+        localStorage.setItem("studentObject", JSON.stringify(data.data))
       }else{
         navigate("/login/admin")
       }
 
-      if(!res){
+      if(!data){
         throw new Error("tizim xatoligi")
       }
     }catch(err){
@@ -29,7 +31,7 @@ function StudentLogin() {
   }
   useEffect(() => {
     localStorage.setItem("loginStudent", JSON.stringify({
-        body: "student", 
+        body: "student",
         img: "studentImg", 
         text: "Login to kids academy"
       })

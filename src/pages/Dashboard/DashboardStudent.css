@@ -43,8 +43,8 @@
 .hero__list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 70px);
-    padding-top: 25px;
+    grid-template-rows: repeat(2, 70px);
+    padding-top: 40px;
 }
 .hero_item{
     display: flex;
