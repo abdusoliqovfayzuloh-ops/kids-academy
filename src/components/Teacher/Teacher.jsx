@@ -28,8 +28,8 @@ function Teacher() {
             <p className="teacher_email">{teacher.email}</p>
           </div>
           <div className="teacher__info">
-            <spna className="teacher_role">{teacher.data.role}</spna>
-            <spna className="teacher_index">{index + 1}</spna>
+            <span className="teacher_role">{teacher.data.role}</span>
+            <span className="teacher_index">{index + 1}</span>
           </div>
         </li>)
       }

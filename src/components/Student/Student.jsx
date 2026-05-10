@@ -20,7 +20,7 @@ function Student() {
 
   return (<ul className='students__list'>
     {
-      students?.map((student) => <li className="student_item">
+      students?.map((student) => <li key={student.id} className="student_item">
         <div className="student__info">
           <img src={student.image} alt="" className="student_avatar" />
           <div className="student__content">
