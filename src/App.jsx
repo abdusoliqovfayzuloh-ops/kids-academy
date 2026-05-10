@@ -80,7 +80,7 @@ function App() {
           element: <ClassAdmin/>,
         }, 
         {
-          path: "class/:name",
+          path: "class/:groupName",
           element: <GroupDetail/>
         },
         {
