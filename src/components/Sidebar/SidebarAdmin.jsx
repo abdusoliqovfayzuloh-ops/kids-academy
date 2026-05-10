@@ -17,6 +17,7 @@ function SidebarAdmin() {
           <li className="sidebar_item"><NavLink to={"/layoutAdmin/dashboard"} className={({ isActive }) => isActive ? "active" : "notActive"}>dashboard</NavLink></li>
           <li className="sidebar_item"><NavLink to={"/layoutAdmin/class"} className={({ isActive }) => isActive ? "active" : "notActive"}>group</NavLink></li>
           <li className="sidebar_item"><NavLink to={"/layoutAdmin/shop"} className={({ isActive }) => isActive ? "active" : "notActive"}>shop</NavLink></li>
+          <li className="sidebar_item"><NavLink to={"/layoutAdmin/info"} className={({ isActive }) => isActive ? "active" : "notActive"}>info</NavLink></li>
           <li className="sidebar_item"><NavLink to={"/layoutAdmin/payment"} className={({ isActive }) => isActive ? "active" : "notActive"}>payment</NavLink></li>
           <li className="sidebar_item"><NavLink to={"/layoutAdmin/food"} className={({ isActive }) => isActive ? "active" : "notActive"}>food</NavLink></li>
         </ul>

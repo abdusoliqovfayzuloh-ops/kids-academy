@@ -20,6 +20,7 @@ import PaymentsAdmin from './pages/Payments/PaymentsAdmin'
 import Profile from './pages/Profile/Profile'
 import InfoStudent from './pages/Info/InfoStudent'
 import GroupDetail from './components/GroupDetail/GroupDetail'
+import InfoAdmin from './pages/Info/InfoAdmin'
 
 function App() {
   const router = createBrowserRouter([
@@ -86,6 +87,10 @@ function App() {
         {
           path: "food",
           element: <FoodAdmin/>
+        },
+        {
+          path: "info",
+          element: <InfoAdmin/>
         },
         {
           path: "payment",
