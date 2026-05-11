@@ -124,11 +124,16 @@ function Modal({functionName, setOpenModal, openModal}) {
   async function postGroup(){
     try{
       const res = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Group.json", {
-        data: [],
+        data: [
+          {
+            id: Number(Math.random().toFixed(10)),
+            age: group?.phone,
+            student: group?.teacher
+          }
+        ],
         id: Number(Math.random().toFixed(10)),
         ...group
       })
-      console.log(res.data)
     }catch(err) {
       console.log(err.message)
     }

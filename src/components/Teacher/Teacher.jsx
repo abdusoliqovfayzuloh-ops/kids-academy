@@ -9,7 +9,7 @@ function Teacher() {
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json")
       const data = Object.values(res.data)
-      const teachers = data.filter((teacher) => teacher.data.role == "admin")
+      const teachers = data.filter((teacher) => teacher?.data?.role == "admin")
 
       setTeachers(teachers)
     }catch(err){

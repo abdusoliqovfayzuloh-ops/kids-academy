@@ -14,8 +14,8 @@ function DashboardAdmin() {
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json")
       const users = Object.values(res.data)
-      const students = users.filter((user) => user.data.role == "student")
-      const teachers = users.filter((user) => user.data.role == "admin")
+      const students = users.filter((user) => user?.data?.role == "student")
+      const teachers = users.filter((user) => user?.data?.role == "admin")
 
       setUsers(users.length)
       setStudents(students.length)
