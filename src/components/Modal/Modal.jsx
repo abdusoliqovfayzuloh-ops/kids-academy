@@ -181,8 +181,7 @@ function Modal({functionName, setOpenModal, openModal}) {
         <h2 className="modal_title">{functionName}</h2>
       </div>
       {
-       functionName == "Add User"? <>
-        <div className="user__content-top">
+       functionName == "Add User"? <div><div className="user__content-top">
           <div className="user__content">
             <label htmlFor="name" className="user_label">Change user <br /> name:</label>
             <input id='name' type="text" className="user_input" placeholder='user name' ref={nameInput}/>
@@ -247,7 +246,7 @@ function Modal({functionName, setOpenModal, openModal}) {
             </div>
           </> : <></>
         }
-       </> : functionName == "Add Group"? <div className="group__content-top">
+       </div> : functionName == "Add Group"? <div className="group__content-top">
         <div className="group__content">
           <label htmlFor="groupName" className="group_label">Change group name:</label>
           <input id='groupName' type="text" className="group_input" placeholder='group name' onChange={(evt) => setGroup({...group, group: evt.target.value})}/>
@@ -276,16 +275,74 @@ function Modal({functionName, setOpenModal, openModal}) {
        </div> : functionName == "Add Food"? <div className="food__content-top">
          <div className="food__content">
            <label htmlFor="foodName" className="food_label">Change food name:</label>
-           <input id='foodName' type="text" className="food_input" placeholder='food name' onChange={(evt) => setProduct({ ...product, name: evt.target.value })} />
+           <input id='foodName' type="text" className="food_input" placeholder='food name' onChange={(evt) => setFood({ ...food, foodName: evt.target.value })} />
          </div>
          <div className="food__content">
-           <label htmlFor="foodImg" className="food_label">Change food img:</label>
-           <input id='foodImg' type="text" className="food_input" placeholder='food img' onChange={(evt) => setProduct({ ...product, img: evt.target.value }) }/>
+           <label htmlFor="foodImg" className="food_label">Change food <br /> img:</label>
+           <input id='foodImg' type="text" className="food_input" placeholder='food img' onChange={(evt) => setFood({ ...food, foodImg: evt.target.value }) }/>
          </div>
          <div className="food__content">
            <label htmlFor="foodPoint" className="food_label">Change food time:</label>
-           <input id='foodPoint' type="datetime-local" className="food_input" placeholder='food time' onChange={(evt) => setProduct({ ...product, point: evt.target.value }) }/>
+           <input id='foodPoint' type="datetime-local" className="food_input" placeholder='food time' onChange={(evt) => setFood({ ...food, time: evt.target.value }) }/>
          </div>
+       </div> : functionName == "Add Info"? <div><div className="info__content-top">
+        <div className="info__content">
+           <label htmlFor="infoName" className="info_label">Change info name:</label>
+           <input id='infoName' type="text" className="info_input" placeholder='info name'/>
+         </div>
+         <div className="info__content">
+           <label htmlFor="infoCity" className="info_label">Change info <br /> city:</label>
+           <input id='infoCity' type="text" className="info_input" placeholder='info city' />
+         </div>
+         <div className="info__content">
+           <label htmlFor="infoAddress" className="info_label">Change info address:</label>
+           <input id='infoAddress' type="text" className="info_input" placeholder='info address'/>
+         </div>
+         <div className="info__content">
+           <label htmlFor="infoDistrict" className="info_label">Change info district:</label>
+           <input id='infoDistrict' type="text" className="info_input" placeholder='info district'/>
+         </div>
+       </div>
+       <div className="info__content-center">
+        <div className="info__content">
+          <label htmlFor="infoEmail" className="info_label">Change info email:</label>
+          <input id='infoEmail' type="text" className="info_input" placeholder='info email'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoPhone" className="info_label">Change info phone:</label>
+          <input id='infoPhone' type="text" className="info_input" placeholder='info phone'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoLatitude" className="info_label">Change info latitude:</label>
+          <input id='infoLatitude' type="text" className="info_input" placeholder='info latitude'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoLongitude" className="info_label">Change info longitude:</label>
+          <input id='infoLongitude' type="text" className="info_input" placeholder='info longitude'/>
+        </div>
+       </div>
+       <div className="info__content-bottom">
+        <div className="info__content">
+          <label htmlFor="infoStart" className="info_label">Change leasson start:</label>
+          <input id='infoStart' type="text" className="info_input" placeholder='leasson start'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoEnd" className="info_label">Change leasson end:</label>
+          <input id='infoEnd' type="text" className="info_input" placeholder='leasson end'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoLunch" className="info_label">Change lunch time:</label>
+          <input id='infoLunch' type="text" className="info_input" placeholder='lunch time'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoBreakfast" className="info_label">Change breakfast time:</label>
+          <input id='infoBreakfast' type="text" className="info_input" placeholder='breakfast time'/>
+        </div>
+        <div className="info__content">
+          <label htmlFor="infoQuiet" className="info_label">Change quiet time :</label>
+          <input id='infoQuiet' type="text" className="info_input" placeholder='leasson quiet'/>
+        </div>
+       </div>
        </div> : <></>
       }
       <button className='modal_btn-submit'>submit</button>
