@@ -24,7 +24,7 @@ function HeaderAdmin({setFunctionName, setOpenModal}) {
           setOpenModal(true)
           setFunctionName("Add Info")
         }else if(location.pathname == "/layoutAdmin/payment"){
-          setOpenModal(true)
+          navigate("/layoutAdmin/dashboard")
           setFunctionName("Add Payment")
         }else if(location.pathname == "/layoutAdmin/food"){
           setOpenModal(true)
