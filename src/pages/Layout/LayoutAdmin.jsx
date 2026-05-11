@@ -13,7 +13,7 @@ function LayoutAdmin() {
   return (<div className='layout__admin'>
     <HeaderAdmin setOpenModal={setOpenModal} setFunctionName={setFunctionName}/>
     <SidebarAdmin/>
-    {openModal && <Modal functionName={functionName} setOpenModal={setOpenModal}/>}
+    {openModal && <Modal functionName={functionName} setOpenModal={setOpenModal} openModal={openModal}/>}
     <Outlet/>
   </div>)
 }

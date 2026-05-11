@@ -1,12 +1,118 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import "./Modal.css"
+import axios from 'axios'
 
-function Modal({functionName, setOpenModal}) {
-  return (<form>
-      <button onClick={(evt) => {
-        evt.preventDefault()
-        setOpenModal(false)
-      }}>&times;</button>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quisquam eaque ipsum assumenda! Fugiat saepe explicabo blanditiis a, in voluptatibus, officia minus recusandae quas deleniti, totam temporibus reiciendis quibusdam delectus ipsam assumenda aspernatur ratione non distinctio commodi vel aliquam accusantium! Esse porro odio omnis et? Voluptate, odio dignissimos asperiores, maiores distinctio molestiae consequuntur illo necessitatibus laborum doloremque ea delectus? Veniam earum accusantium iure impedit doloribus veritatis autem, optio consequatur illum illo est neque enim, voluptatem consequuntur fugiat ea? Similique magnam ullam nihil, voluptate, quo inventore eos, quaerat accusantium totam numquam sed ad ipsa commodi illum fugiat! Harum mollitia officiis ducimus fugit totam! Veritatis unde aliquam minus dolor autem? Vero deserunt natus corrupti, voluptatem quis nemo quas doloribus eaque magnam velit molestiae dolor dicta deleniti dolorum iusto consequatur architecto, nam modi accusantium. Atque aspernatur itaque libero obcaecati ratione neque quia quod voluptate sequi aliquid reiciendis alias incidunt, tempore doloribus voluptatem veniam accusantium aperiam earum, rerum et fuga? Quibusdam dicta vitae eius eveniet possimus officiis. Odio praesentium non rerum facere totam consectetur cumque mollitia nemo molestiae! Cumque ab, ipsa culpa optio officia modi molestiae non dolore cupiditate quaerat maiores quam vero, suscipit dicta? Velit totam repudiandae omnis deleniti, optio praesentium incidunt distinctio voluptate magnam deserunt laboriosam alias obcaecati natus esse repellendus quam nulla beatae laborum qui, at, numquam iste. Officia magnam officiis explicabo, voluptas minus dolorem dolorum voluptatibus exercitationem alias in consequuntur a nemo nulla aliquid vel incidunt sapiente quasi quis ipsa ut. Expedita rerum commodi odit molestiae harum sequi voluptates? Officiis quibusdam velit deserunt rem qui ipsum, ab sit sint odio voluptatem eveniet assumenda iste excepturi minima eius molestias magnam libero laboriosam eligendi consequuntur. Sit nulla eaque atque repellat illum accusantium deleniti qui delectus, dolore non accusamus ab reprehenderit consequatur? Sed accusamus molestias ipsum neque dolorum dolor eaque eveniet amet, vero nesciunt omnis repudiandae. Accusamus natus quisquam odio accusantium illum laboriosam vero repellat alias iure molestiae dicta nam qui, esse autem neque ea sint? Aut eius blanditiis, eum deserunt aspernatur, iusto rem delectus, est sunt error facilis sequi. Non a mollitia blanditiis libero ea, eligendi aperiam sapiente voluptatem sed neque! Eligendi a illum sapiente non officiis doloremque quisquam delectus! Laborum delectus perspiciatis consequatur culpa cupiditate eaque impedit, alias ex dolore molestiae vel vitae ducimus distinctio veritatis explicabo eligendi necessitatibus quod amet, animi a fugiat ipsam cumque. Rerum perspiciatis necessitatibus molestiae est! Vel, porro? Quisquam consequuntur quis laudantium non excepturi nam architecto quaerat, fuga minima quas sapiente quia enim mollitia illo sunt earum dolorem ipsa ea nobis ut vitae vero. Autem, temporibus, placeat suscipit dicta nam minima perferendis numquam laudantium veritatis error dignissimos porro eius unde sapiente ea ex necessitatibus blanditiis veniam sequi. Velit architecto ea aliquid, placeat laborum esse eaque voluptate! Officiis esse nulla illum sapiente architecto dolorem doloribus a nihil aliquid ad, accusamus, quaerat consequatur aperiam in ratione quia culpa est voluptatem, nostrum soluta aliquam? Animi ab voluptatem fugiat, nemo voluptatibus dolores natus ea totam quidem dolor quis dignissimos excepturi mollitia ratione nihil enim. Aspernatur tenetur excepturi exercitationem sit tempora necessitatibus, alias explicabo ipsam, dolores error, harum ad eveniet dicta. Reiciendis unde animi ratione, nostrum iusto fugiat aliquid distinctio libero nesciunt eos, dolorum totam quae esse aperiam laborum eaque exercitationem cumque, quod quaerat quia. Esse officia perferendis omnis numquam maiores ratione at obcaecati impedit in, explicabo aut nobis rerum dolorum nulla nisi minima soluta cum magnam excepturi odit quas quo exercitationem quos. Architecto amet autem omnis, unde exercitationem vel error harum nobis sint explicabo eaque modi quasi, quis ducimus voluptatibus nisi praesentium fuga consequuntur incidunt. Modi, amet voluptatem cupiditate laborum tempore, natus non at nostrum possimus omnis placeat deserunt similique reprehenderit minus aliquid veritatis, eum iste soluta provident cumque! Ratione veritatis non iure ab eligendi distinctio, molestias nam eaque repellat consequuntur tempora sit doloremque amet mollitia rem incidunt tenetur? Earum deleniti laborum accusamus, ad illo id quasi molestias eveniet tempore sequi assumenda dolor quos natus adipisci recusandae totam autem, beatae ipsum minima libero nostrum voluptatum! Est atque doloribus dolores libero officiis placeat, suscipit magni, dicta eaque minus recusandae. Accusamus aperiam delectus tempora ea nisi aliquam velit vero amet in, fugit molestiae placeat necessitatibus architecto illo sunt? Amet earum suscipit similique aliquam autem cum distinctio rem temporibus dolorum explicabo quisquam odio dicta delectus quaerat odit esse exercitationem accusamus quam minima, fugit cupiditate aut non? Totam id doloribus ipsam laborum eligendi? Nobis culpa earum in tempore aliquid quam beatae nostrum libero vitae doloremque et, natus dignissimos alias id sapiente blanditiis officiis, dolore nulla, eos illum aut eligendi fugit. Nobis cupiditate, mollitia sunt doloremque sequi maxime, fugiat quia sapiente perferendis quod soluta dolore! Culpa laudantium tempore dolore facere iusto nobis velit voluptatem iste repudiandae nemo esse commodi temporibus facilis numquam, voluptas praesentium animi sunt earum in. Dolores pariatur ex voluptatum praesentium eaque impedit consectetur officia doloremque unde cupiditate aliquid commodi minus libero dolor necessitatibus voluptates dignissimos quaerat, quos assumenda placeat quae vero possimus. Esse voluptatibus unde minima similique exercitationem optio doloribus quis reprehenderit harum soluta? Reprehenderit, dolorem non aliquid quisquam dignissimos odit tempora amet labore cumque excepturi placeat, maiores libero itaque quae eveniet eaque esse inventore provident modi. Quod corrupti doloremque et tempore quas ab. Aperiam nihil blanditiis in obcaecati ab autem id eius ipsum quisquam ut dolore natus voluptates, excepturi sint consequuntur quaerat. Error magni alias voluptatem necessitatibus, eligendi provident magnam facilis et doloremque quis quasi. Incidunt, explicabo id? Quibusdam corrupti aut exercitationem labore est perferendis impedit et, architecto officiis minima at facere quam aspernatur mollitia odit inventore debitis dignissimos velit, veritatis vel enim, autem iste? Consequatur perspiciatis itaque dolores, nihil dolorum tempora vero nostrum optio tempore inventore tenetur! Ex sapiente quos, maiores accusamus doloremque dolores, tempora magnam fugiat, aperiam optio voluptatum ab autem illum accusantium nihil illo id consectetur sequi perspiciatis amet? Ratione a minus mollitia officia omnis! Labore, laborum tenetur quis tempore numquam nobis! Adipisci excepturi alias molestiae. Recusandae sapiente, laboriosam praesentium illo necessitatibus facere quis, rerum sint temporibus magni, vero omnis nemo repellendus quibusdam molestias amet maxime quas voluptates unde expedita nulla. Cumque, voluptatum perspiciatis fuga reprehenderit iusto voluptatem?</p>
+function Modal({functionName, setOpenModal, openModal}) {
+  const [newDate, setNewDate] = useState(0)
+  const nameInput = useRef(null)
+  const [role, setRole] = useState("")
+  const emailInput = useRef(null)
+  const passwordInput = useRef(null)
+  const [profile, setProfile] = useState({
+    id: 0,
+    name: "",
+    email: "",
+    age: 0,
+    number: 0,
+    image: ""
+  })
+  const pointInput = useRef(null)
+  const groupSelect = useRef(null)
+  const paymnetData = useRef(null)
+  const paymnetInfo = useRef(null)
+
+  async function postUser(){
+    if(role == "admin"){
+      const res = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json",{
+        data: {
+          id: Number(Math.random().toFixed(10)),
+          name: nameInput.current.value,
+          role: role
+        },
+        email: emailInput.current.value,
+        password: passwordInput.current.value
+      })
+      console.log(res.data)
+    }else{
+      console.log(role)
+    }
+  }
+
+  return (<form className={"modal__form"} onSubmit={(evt) => {
+    evt.preventDefault()
+    postUser()
+  }}>
+      <div className="modal__wraper">
+        <button onClick={(evt) => {evt.preventDefault(),setOpenModal(false)}} className='modal_btn'>&times;</button>
+        <h2 className="modal_title">{functionName}</h2>
+      </div>
+      {
+       functionName == "Add User"? <>
+        <div className="user__content-top">
+          <div className="user__content">
+            <label htmlFor="name" className="user_label">Change user <br /> name:</label>
+            <input id='name' type="text" className="user_input" placeholder='user name' ref={nameInput}/>
+          </div>
+          <div className="user__content">
+            <label htmlFor="role" className="user_label">Change user <br /> role:</label>
+            <select id='role' className='user_select' defaultValue="" onChange={(evt) => setRole(evt.target.value)}>
+              <option disabled value={""}>Role</option>
+              <option value="student">Student</option>
+              <option value="admin">Teacher</option>
+            </select>
+          </div>
+        </div>
+        <div className="user__content-center">
+          <div className="user__content">
+            <label htmlFor="email" className="user_label">Change user <br /> email:</label>
+            <input id='email' type="email" className="user_input" placeholder='user email' ref={emailInput}/>
+          </div>
+          <div className="user__content">
+            <label htmlFor="password" className="user_label">Change user <br /> password:</label>
+            <input id='password' type="text" className="user_input" placeholder='user password' ref={passwordInput}/>
+          </div>
+        </div>
+        {
+          role == "student"? <>
+            <div className="user__content-bottom">
+              <div className="user__content">
+                <label htmlFor="age" className="user_label">Change user <br /> age:</label>
+                <input id='age' type="number" className="user_input" placeholder='user age' onChange={(evt) => setProfile( {...profile, age: evt.target.value} )}/>
+              </div>
+              <div className="user__content">
+                <label htmlFor="number" className="user_label">Change user <br /> number:</label>
+                <input id='number' type="number" className="user_input" placeholder='user phone' onChange={(evt) => setProfile( {...profile, number: evt.target.value} )}/>
+              </div>
+              <div className="user__content">
+                <label htmlFor="image" className="user_label">Change user <br /> image:</label>
+                <input id='image' type="text" className="user_input" placeholder='user image' onChange={(evt) => setProfile( {...profile, image: evt.target.value} )}/>
+              </div>
+              <div className="user__content">
+                <label htmlFor="point" className="user_label">Change user <br /> start point:</label>
+                <input id='point' type="number" className="user_input" placeholder='user start point' ref={pointInput}/>
+              </div>
+              <div className="user__content">
+                <label htmlFor="group" className="user_label">Change user <br /> group:</label>
+                <select id='group' className='user_select' defaultValue={""} ref={groupSelect}>
+                  <option disabled value={""}>Group</option>
+                </select>
+              </div>
+            </div>
+            <div className="user__payment">
+              <div className="user__content">
+                <label htmlFor="data" className="user_label">Change payment data:</label>
+                <input id='data' type="date" className="user_input" ref={paymnetData}/>
+              </div>
+              <div className="user__content">
+                <label htmlFor="paymentInfo" className="user_label">Change payment info:</label>
+                <input id='paymentInfo' type="text" className="user_input" placeholder='change payment info' ref={paymnetInfo}/>
+              </div>
+            </div>
+          </> : <></>
+        }
+       </> : <></>
+      }
+      <button className='modal_btn-submit'>submit</button>
   </form>)
 }
 

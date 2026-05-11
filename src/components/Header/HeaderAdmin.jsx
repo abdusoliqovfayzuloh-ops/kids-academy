@@ -5,8 +5,7 @@ import "./HeaderAdmin.css"
 function HeaderAdmin({setFunctionName, setOpenModal}) {
   const navigate = useNavigate("")
   const location = useLocation()
-  console.log(location.pathname)
-
+  
   return (<header className='admin__header'>
     <div className="header__content">
       <button className="header_btn-admin" onClick={(evt) => {
@@ -14,22 +13,22 @@ function HeaderAdmin({setFunctionName, setOpenModal}) {
 
         if(location.pathname == "/layoutAdmin/dashboard/student" || location.pathname == "/layoutAdmin/dashboard/teacher"){
           setOpenModal(true)
-          setFunctionName("AddUser")
+          setFunctionName("Add User")
         }else if(location.pathname == "/layoutAdmin/class"){
           setOpenModal(true)
-          setFunctionName("AddGroup")
+          setFunctionName("Add Group")
         }else if(location.pathname == "/layoutAdmin/shop"){
           setOpenModal(true)
-          setFunctionName("AddProduct")
+          setFunctionName("Add Product")
         }else if(location.pathname == "/layoutAdmin/info"){
           setOpenModal(true)
-          setFunctionName("AddInfo")
+          setFunctionName("Add Info")
         }else if(location.pathname == "/layoutAdmin/payment"){
           setOpenModal(true)
-          setFunctionName("AddPayment")
+          setFunctionName("Add Payment")
         }else if(location.pathname == "/layoutAdmin/food"){
           setOpenModal(true)
-          setFunctionName("Addfood")
+          setFunctionName("Add Food")
         }
       }}>{
           location.pathname == "/layoutAdmin/dashboard/student" || 
