@@ -36,6 +36,23 @@ function Modal({functionName, setOpenModal, openModal}) {
     time: "",
     foodName: ""
   })
+  const [info, setInfo] = useState({
+    address:"",
+    city:"",
+    district:"",
+    email:"",
+    latitude:0,
+    longitude:0,
+    name:"",
+    phone:0
+  })
+  const [infoData, setInfoData] = useState({
+    breakfastTime:"",
+    lessonEnd:"",
+    lessonStart:"",
+    lunchTime:"",
+    quietTime:""
+  })
 
   async function postUser(){
     if(role == "admin"){
@@ -122,11 +139,11 @@ function Modal({functionName, setOpenModal, openModal}) {
   }
   async function postInfo(){
     try{
-      const res = await axios.post("url", {
-        data: [],
-        teacher: nameInput.current.value,
-        phone: phoneInput.current.value,
-        email: emailInput.current.value
+      const res = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Information.json", {
+        data: {
+          ...infoData
+        },
+        ...info
       })
       console.log(res.data)
     }catch(err) {
@@ -288,59 +305,59 @@ function Modal({functionName, setOpenModal, openModal}) {
        </div> : functionName == "Add Info"? <div><div className="info__content-top">
         <div className="info__content">
            <label htmlFor="infoName" className="info_label">Change info name:</label>
-           <input id='infoName' type="text" className="info_input" placeholder='info name'/>
+           <input id='infoName' type="text" className="info_input" placeholder='info name' onChange={(evt) => setInfo({...info, name: evt.target.value})}/>
          </div>
          <div className="info__content">
            <label htmlFor="infoCity" className="info_label">Change info <br /> city:</label>
-           <input id='infoCity' type="text" className="info_input" placeholder='info city' />
+           <input id='infoCity' type="text" className="info_input" placeholder='info city' onChange={(evt) => setInfo({...info, city: evt.target.value})}/>
          </div>
          <div className="info__content">
            <label htmlFor="infoAddress" className="info_label">Change info address:</label>
-           <input id='infoAddress' type="text" className="info_input" placeholder='info address'/>
+           <input id='infoAddress' type="text" className="info_input" placeholder='info address' onChange={(evt) => setInfo({...info, address: evt.target.value})}/>
          </div>
          <div className="info__content">
            <label htmlFor="infoDistrict" className="info_label">Change info district:</label>
-           <input id='infoDistrict' type="text" className="info_input" placeholder='info district'/>
+           <input id='infoDistrict' type="text" className="info_input" placeholder='info district' onChange={(evt) => setInfo({...info, district: evt.target.value})}/>
          </div>
        </div>
        <div className="info__content-center">
         <div className="info__content">
           <label htmlFor="infoEmail" className="info_label">Change info email:</label>
-          <input id='infoEmail' type="text" className="info_input" placeholder='info email'/>
+          <input id='infoEmail' type="text" className="info_input" placeholder='info email' onChange={(evt) => setInfo({...info, email: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoPhone" className="info_label">Change info phone:</label>
-          <input id='infoPhone' type="text" className="info_input" placeholder='info phone'/>
+          <input id='infoPhone' type="text" className="info_input" placeholder='info phone' onChange={(evt) => setInfo({...info, phone: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoLatitude" className="info_label">Change info latitude:</label>
-          <input id='infoLatitude' type="text" className="info_input" placeholder='info latitude'/>
+          <input id='infoLatitude' type="text" className="info_input" placeholder='info latitude' onChange={(evt) => setInfo({...info, latitude: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoLongitude" className="info_label">Change info longitude:</label>
-          <input id='infoLongitude' type="text" className="info_input" placeholder='info longitude'/>
+          <input id='infoLongitude' type="text" className="info_input" placeholder='info longitude' onChange={(evt) => setInfo({...info, longitude: evt.target.value})}/>
         </div>
        </div>
        <div className="info__content-bottom">
         <div className="info__content">
           <label htmlFor="infoStart" className="info_label">Change leasson start:</label>
-          <input id='infoStart' type="text" className="info_input" placeholder='leasson start'/>
+          <input id='infoStart' type="text" className="info_input" placeholder='leasson start' onChange={(evt) => setInfoData({...infoData, lessonStart: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoEnd" className="info_label">Change leasson end:</label>
-          <input id='infoEnd' type="text" className="info_input" placeholder='leasson end'/>
+          <input id='infoEnd' type="text" className="info_input" placeholder='leasson end' onChange={(evt) => setInfoData({...infoData, lessonEnd: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoLunch" className="info_label">Change lunch time:</label>
-          <input id='infoLunch' type="text" className="info_input" placeholder='lunch time'/>
+          <input id='infoLunch' type="text" className="info_input" placeholder='lunch time' onChange={(evt) => setInfoData({...infoData, lunchTime: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoBreakfast" className="info_label">Change breakfast time:</label>
-          <input id='infoBreakfast' type="text" className="info_input" placeholder='breakfast time'/>
+          <input id='infoBreakfast' type="text" className="info_input" placeholder='breakfast time' onChange={(evt) => setInfoData({...infoData, breakfastTime: evt.target.value})}/>
         </div>
         <div className="info__content">
           <label htmlFor="infoQuiet" className="info_label">Change quiet time :</label>
-          <input id='infoQuiet' type="text" className="info_input" placeholder='leasson quiet'/>
+          <input id='infoQuiet' type="text" className="info_input" placeholder='leasson quiet' onChange={(evt) => setInfoData({...infoData, quietTime: evt.target.value})}/>
         </div>
        </div>
        </div> : <></>
