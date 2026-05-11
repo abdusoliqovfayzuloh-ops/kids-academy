@@ -4,23 +4,21 @@ import axios from 'axios'
 
 function Modal({functionName, setOpenModal, openModal}) {
   const [newDate, setNewDate] = useState(0)
-  const nameInput = useRef(null)
+  const [email, setEmail] = useState("")
   const [role, setRole] = useState("")
-  const emailInput = useRef(null)
-  const passwordInput = useRef(null)
+  const [name, setName] = useState("")
+  const [password, setPassword] = useState("")
+  const [point, setPoint] = useState("")
+  const [groupName, setGroupName] = useState("")
+  const [paymentData, setPaymentData] = useState("")
+  const [paymentInfo, setPaymentInfo] = useState("")
+  const [groups, setGroups] = useState([])
   const [profile, setProfile] = useState({
     id: Number(Math.random().toFixed(10)),
-    name: "",
-    email: "",
     age: 0,
     number: 0,
     image: ""
   })
-  const pointInput = useRef(null)
-  const groupSelect = useRef(null)
-  const paymnetData = useRef(null)
-  const paymnetInfo = useRef(null)
-  const [groups, setGroups] = useState([])
   const [group, setGroup] = useState({
     group: "",
     teacher: "",
@@ -55,15 +53,16 @@ function Modal({functionName, setOpenModal, openModal}) {
   })
 
   async function postUser(){
-    if(role == "admin"){
+    try{
+     if(role == "admin"){
       const res = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json",{
         data: {
           id: Number(Math.random().toFixed(10)),
-          name: nameInput.current.value,
+          name: name,
           role: role
         },
-        email: emailInput.current.value,
-        password: passwordInput.current.value
+        email: email,
+        password: password
       })
       console.log(res.data)
     }else{
@@ -71,47 +70,55 @@ function Modal({functionName, setOpenModal, openModal}) {
         {
           data: {
             id: profile.id,
-            name: nameInput.current.value,
-            group: groupSelect.current.value,
+            name: name,
+            group: groupName,
             role: role
           },
-          email: emailInput.current.value,
-          password: passwordInput.current.value
+          email: email,
+          password: password
         }
       )
+      console.log(resLogin)
       const resProfile = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profile.json",{
         ...profile,
-        email: emailInput.current.value, 
-        nameInput: nameInput.current.value,
-        name: nameInput.current.value
+        email: email, 
+        name: name
       })
+      console.log(resProfile)
       const resPayment = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Payment.json",{
         data:[
           {
             id: Number(Math.random().toFixed(10)),
-            info: paymnetInfo.current.value,
-            time: paymnetData.current.value
+            info: paymentInfo,
+            time: paymentData
           }
         ],
         id: profile?.id
       })
+      console.log(resPayment)
       const resScore = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Score.json",{
         id: profile?.id,
-        name: nameInput.current.value,
-        point: pointInput.current.value,
+        name: name,
+        point: point,
         age: profile?.age
       })
-      const oldGroup = groups?.find((group) => group.group == groupSelect.current.value)
+      console.log(resScore)
+      const oldGroup = groups?.find((group) => group.group == groupName)
       const resGroup = await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Group/${oldGroup?.firebaseKey}.json`,{
         data: [
           ...oldGroup.data,
           {
             id: Number(Math.random().toFixed(10)),
             age: profile?.age,
-            student: nameInput.current.value
+            student: name
           }
         ]
       })
+      console.log(oldGroup.firebaseKey)
+      console.log(resGroup)
+     }
+    }catch(err){
+      console.log(err.message)
     }
   }
   async function postGroup(){
@@ -201,7 +208,7 @@ function Modal({functionName, setOpenModal, openModal}) {
        functionName == "Add User"? <div><div className="user__content-top">
           <div className="user__content">
             <label htmlFor="name" className="user_label">Change user <br /> name:</label>
-            <input id='name' type="text" className="user_input" placeholder='user name' ref={nameInput}/>
+            <input id='name' type="text" className="user_input" placeholder='user name' onChange={(evt) => setName(evt.target.value)}/>
           </div>
           <div className="user__content">
             <label htmlFor="role" className="user_label">Change user <br /> role:</label>
@@ -215,11 +222,11 @@ function Modal({functionName, setOpenModal, openModal}) {
         <div className="user__content-center">
           <div className="user__content">
             <label htmlFor="email" className="user_label">Change user <br /> email:</label>
-            <input id='email' type="email" className="user_input" placeholder='user email' ref={emailInput}/>
+            <input id='email' type="email" className="user_input" placeholder='user email' onChange={(evt) => setEmail(evt.target.value)}/>
           </div>
           <div className="user__content">
             <label htmlFor="password" className="user_label">Change user <br /> password:</label>
-            <input id='password' type="text" className="user_input" placeholder='user password' ref={passwordInput}/>
+            <input id='password' type="text" className="user_input" placeholder='user password' onChange={(evt) => setPassword(evt.target.value)}/>
           </div>
         </div>
         {
@@ -239,11 +246,11 @@ function Modal({functionName, setOpenModal, openModal}) {
               </div>
               <div className="user__content">
                 <label htmlFor="point" className="user_label">Change user <br /> start point:</label>
-                <input id='point' type="number" className="user_input" placeholder='user start point' ref={pointInput}/>
+                <input id='point' type="number" className="user_input" placeholder='user start point' onChange={(evt) => setPoint(evt.target.value)}/>
               </div>
               <div className="user__content">
                 <label htmlFor="group" className="user_label">Change user <br /> group:</label>
-                <select id='group' className='user_select' defaultValue={""} ref={groupSelect}>
+                <select id='group' className='user_select' defaultValue={""} onChange={(evt) => setGroupName(evt.target.value)}>
                   <option disabled value={""}>Group</option>
                   {
                     groups?.map((group, index) => <option key={index} value={`${group.group}`}>{group.group}</option>)
@@ -254,11 +261,11 @@ function Modal({functionName, setOpenModal, openModal}) {
             <div className="user__payment">
               <div className="user__content">
                 <label htmlFor="data" className="user_label">Change payment data:</label>
-                <input id='data' type="date" className="user_input" ref={paymnetData}/>
+                <input id='data' type="date" className="user_input" onChange={(evt) => setPaymentData(evt.target.value)}/>
               </div>
               <div className="user__content">
                 <label htmlFor="paymentInfo" className="user_label">Change payment info:</label>
-                <input id='paymentInfo' type="text" className="user_input" placeholder='change payment info' ref={paymnetInfo}/>
+                <input id='paymentInfo' type="text" className="user_input" placeholder='change payment info' onChange={(evt) => setPaymentInfo(evt.target.value)}/>
               </div>
             </div>
           </> : <></>

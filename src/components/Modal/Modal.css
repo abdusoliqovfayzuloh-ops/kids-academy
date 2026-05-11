@@ -229,14 +229,6 @@
 .info_input::placeholder{
     color: #9ca3af;
 }
-
-.info_input:focus{
-    border-color: #2563eb;
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.2);
-}
-.info_input:hover{
-    border-color: #cbd5e1;
-}
 .info__content-bottom .info__content:last-child{
     grid-column: 1/3;
 }
