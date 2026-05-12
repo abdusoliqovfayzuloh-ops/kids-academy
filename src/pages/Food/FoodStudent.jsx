@@ -20,11 +20,6 @@ function FoodStudent() {
 
   return (
     <main className='site__main'>
-      <section className="hero">
-        <div className="conteyner food__wraper">
-          <h1 className="food_title">Food Menu</h1>
-        </div>
-      </section>
       <section className='food-section'>
         <div className='conteyner'>
           <div className='food-list'>

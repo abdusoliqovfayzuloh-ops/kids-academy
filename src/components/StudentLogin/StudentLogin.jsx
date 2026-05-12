@@ -12,7 +12,7 @@ function StudentLogin() {
     try{
       const res = await axios.get(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json`)
       const users = Object.values(res.data) 
-      const data = users.find((student) => student.password == password && student.email == email)
+      const data = users.find((student) => student?.password == password && student?.email == email)
       
       if(data.data.role == "student"){
         navigate("/layoutStudent/dashboard")
