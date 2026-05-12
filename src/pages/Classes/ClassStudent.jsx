@@ -37,13 +37,11 @@ function ClassStudent() {
                 classesData?.data?.map((student) => (
                   <div key={student.id} className='student-item'>
                     <div className='student-item__left'>
-                      <div>
-                        <h3>{student.student}</h3>
-                      </div>
+                      <h3>{student.student}</h3>
+                      <span className='student-chip'>{student.id}</span>
                     </div>
                     <div className='student-item__right'>
                       <span className='student-coin'>{student.age} years old</span>
-                      <span className='student-chip'>{student.id}</span>
                     </div>
                   </div>
                 ))

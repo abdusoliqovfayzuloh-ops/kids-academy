@@ -1,167 +1,84 @@
-.food__wraper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-
-  color: white;
-  font-size: 32px;
-  font-weight: 800;
-}
-.food-section {
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: #f6f8fb;
-}
-.food-item {
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 18px 35px rgba(18, 38, 70, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 20px;
-}
-.food_title{
-  font-size: 60px;
-  font-weight: 800;
+.food-section{
+    width: 100%;
 }
 
-.food-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 22px 40px rgba(18, 38, 70, 0.14);
+.food-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 
-.food-item img {
-  width: 120px;
-  height: 120px;
-  display: block;
-  border-radius: 18px;
-  object-fit: cover;
-  flex-shrink: 0;
+/* FOOD CARD */
+
+.food-item{
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    transition: 0.35s ease;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.1),
+    inset 0 1px 1px rgba(255,255,255,0.2);
 }
 
-.food-item p {
-  margin: 0 0 10px;
-  font-size: 0.96rem;
-  line-height: 1.75;
-  color: #5d6e83;
+.food-item:hover{
+    transform: translateY(-8px) scale(1.02);
+
+    background: rgba(255,255,255,0.25);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.16),
+    inset 0 1px 1px rgba(255,255,255,0.25);
 }
 
-.food-item p:last-child {
-  margin-bottom: 0;
+.food-item img{
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.food-section p {
-  color: #5d6e83;
+/* TEXT */
+
+.text-content{
+    padding: 24px;
 }
 
-.food-section {
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: #f6f8fb;
-}
-.food-list {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr;
-}
+.text-content h3{
+    font-size: 28px;
+    font-weight: 800;
 
-.food-item {
-  position: relative;
-  background: #ffffff;
-  border-radius: 22px;
-  box-shadow: 0 18px 35px rgba(18, 38, 70, 0.08);
-  padding: 22px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 18px;
-  border-left: 6px solid var(--accent-color, #4fb76f);
-  cursor: pointer;
+    color: #fff;
+
+    margin-bottom: 12px;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.12);
 }
 
-.food-item__index {
-  position: absolute;
-  top: 20px;
-  left: 16px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.96);
-  border: 2px solid var(--accent-color, #4fb76f);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #1f3a5f;
-  box-shadow: 0 10px 25px rgba(18, 38, 70, 0.08);
-}
+.text-content p{
+    display: inline-block;
 
-.food-item__image {
-  width: 128px;
-  height: 106px;
-  border-radius: 18px;
-  object-fit: cover;
-  background: #edf3f8;
-}
+    padding: 10px 18px;
 
-.food-item__content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    border-radius: 12px;
 
-.food-item__content h3 {
-  margin: 0;
-  font-size: 1.15rem;
-  color: #152639;
-}
+    background: rgba(255,255,255,0.2);
 
-.food-item__content p {
-  margin: 0;
-  font-size: 0.96rem;
-  line-height: 1.65;
-  color: #5d6e83;
-}
+    border: 1px solid rgba(255,255,255,0.2);
 
-.food-item__meta {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 120px;
-}
+    color: rgba(255,255,255,0.9);
 
-.food-item__price {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #28a745;
-}
+    font-size: 15px;
+    font-weight: 600;
 
-.food-item__day {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #6b778b;
-}
-
-@media (max-width: 800px) {
-  .food-item {
-    grid-template-columns: 1fr;
-    padding: 22px 18px 18px 18px;
-  }
-
-  .food-item__index {
-    left: 14px;
-    top: 14px;
-  }
-
-  .food-item__meta {
-    text-align: left;
-    min-width: auto;
-    margin-top: 10px;
-  }
+    backdrop-filter: blur(10px);
 }

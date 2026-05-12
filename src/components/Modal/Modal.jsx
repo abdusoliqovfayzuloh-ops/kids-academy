@@ -177,10 +177,7 @@ function Modal({functionName, setOpenModal, openModal}) {
   async function getGroups(){
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Group.json")
-      const data = Object.entries(res.data).map(([key, value]) => ({
-        firebaseKey: key,
-        ...value
-      }))
+      const data = Object.entries(res.data).map(([key, value]) => ({firebaseKey: key,...value}))
       setGroups(data)
     }catch(err){
       console.log(err.message)

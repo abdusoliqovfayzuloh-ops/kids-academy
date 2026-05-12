@@ -5,6 +5,7 @@ import './ShopStudent.css'
 function ShopStudent() {
   const [items, setItems] = useState([])
   const [userCoins, setUserCoins] = useState(0)
+  const [scoreKey, setScoreKey] = useState(null)
   const studentObject = JSON.parse(localStorage.getItem("studentObject"))
 
   async function getShopItems() {
@@ -19,13 +20,37 @@ function ShopStudent() {
   async function getCoins(){
     try{
       const res = await axios.get('https://kindergarten-4d40e-default-rtdb.firebaseio.com/Score.json')
-      const scores = await Object.values(res.data)
-      console.log(scores)
-      const data = scores.find((score) => score.id == studentObject?.id)
-      console.log(data)
-      setUserCoins(data.point)
+      const entries = Object.entries(res.data)
+      const found = entries.find(([, score]) => score.id == studentObject?.id)
+      if (found) {
+        setScoreKey(found[0])
+        setUserCoins(found[1].point)
+      }
     }catch(err){
       console.log(err)
+    }
+  }
+
+  async function buyItem(item) {
+    const itemCost = Number(item.point)
+    if (!studentObject) return
+    if (userCoins < itemCost) {
+      alert('Not enough coins to buy this item')
+      return
+    }
+    if (!scoreKey) {
+      alert('Unable to update your score right now. Please try again later.')
+      return
+    }
+
+    const updatedCoins = userCoins - itemCost
+    try {
+      await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Score/${scoreKey}.json`, { point: updatedCoins })
+      setUserCoins(updatedCoins)
+      alert(`You bought ${item.name}! ${itemCost} coins were deducted.`)
+    } catch (err) {
+      console.log(err)
+      alert('Purchase failed. Please try again.')
     }
   }
 
@@ -52,11 +77,18 @@ function ShopStudent() {
           <div className='shop-grid'>
             {items.map((item) => {
               return (
-                <div key={item.id} className={`shop-card`}>
+                <div key={item.id} className='shop-card'>
                   <div className='shop-card__media'><img src={item.img} alt="" /></div>
                   <div className='shop-card__body'>
                     <h2>{item.name}</h2>
                     <p className='shop-card__price'><span>{item.point}</span> coins</p>
+                    <button
+                      className='shop-card__buy'
+                      onClick={() => buyItem(item)}
+                      disabled={userCoins < Number(item.point)}
+                    >
+                      {userCoins >= Number(item.point) ? 'Buy' : 'Not enough coins'}
+                    </button>
                   </div>
                 </div>
               )

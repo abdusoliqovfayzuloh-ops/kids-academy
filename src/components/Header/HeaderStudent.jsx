@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./HeaderStudent.css"
-import logo from '../../assets/icon/logo.png'
+import logo from '../../../public/logo.png'
 
 function Header() {
   const navigate = useNavigate("")

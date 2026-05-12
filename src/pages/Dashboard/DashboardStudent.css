@@ -1,189 +1,277 @@
-.hero{
-    background: linear-gradient(135deg, lightgreen 10%, rgb(0, 157, 255) 80%, rgba(255, 166, 0, 0.55) 100%);
+.site__main{
     width: 100%;
-    height: 500px;
-    border-bottom-left-radius: 100px ;
-    border-bottom-right-radius: 100px ;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(144, 238, 144, 0.602) 0%,
+        rgba(0, 183, 255, 0.603) 55%,
+        rgba(255, 183, 0, 0.455) 100%
+    );
+    padding: 40px 0;
 }
+
+.hero{
+    margin-bottom: 50px;
+}
+
 .hero__wraper{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 70px;
-    animation: scrolAnimation 0.8s ease-in;
-}
-.hero__content{
-    background: rgba(255, 255, 255, 0.469);
-    backdrop-filter: blur(10px);
-    width: 65%;
-    height: 350px;
+    gap: 50px;
     padding: 40px;
     border-radius: 30px;
-    cursor: pointer;
-    transition: linear 0.3s;
+
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.12),
+    inset 0 1px 1px rgba(255,255,255,0.4);
 }
-.hero__content:hover{
-    box-shadow: 1px 1px 4px 0px grey;
-}
+
 .hero_title{
-    color: white;
-    font-size: var(--title-size);
-    font-weight: var(--title-weight);
-    margin: 0;
-    padding: 0;
+    font-size: 44px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
-.hero_img{
-    border-radius: 50%;
-    border: 15px solid rgba(255, 255, 255, 0.669);
-    transition: linear 0.3s;
-}
-.hero_img:hover{
-    box-shadow: 1px 1px 4px 0px grey;
-}
+
 .hero__list{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 70px);
-    padding-top: 40px;
+    grid-template-columns: repeat(2, 300px);
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .hero_item{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 4px;
+    width: 100%;
+    padding: 18px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.2);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
 }
+
+.hero_item:hover{
+    transform: translateY(-5px) scale(1.02);
+
+    background: rgba(255,255,255,0.28);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
 .hero_strong{
-    color: white;
-    font-size: 18px;
-    font-weight: 800;
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: rgba(255,255,255,0.8);
 }
+
 .hero_text{
-    color: white;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
 }
-.actions{
-    padding-top: 80px;
+
+.hero_img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    border: 5px solid rgba(255,255,255,0.4);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
+
+/* ACTIONS */
+
 .actions_title{
-    font-size: var(--title-size);
-    font-weight: var(--title-weight);
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 30px;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
+
+/* SOCIAL */
+
+.actions__instagram,
+.actions__telegram{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+
+    border-radius: 24px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.actions__instagram{
+    margin-bottom: 35px;
+}
+
+.actions__telegram{
+    margin-top: 35px;
+}
+
+.actions__instagram:hover,
+.actions__telegram:hover{
+    transform: translateY(-5px);
+
+    background: rgba(255,255,255,0.25);
+}
+
+.instagram_title,
+.telegram_title{
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.instagram_text,
+.telegram_text{
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+}
+
+/* CARDS */
+
 .actions__wraper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 200px);
-    gap: 20px;
-    padding-top: 30px;
+    gap: 25px;
 }
-.actions__telegram{
-    background: #37AEE2;
-    width: 100%;
-    height: 120px;
-    border-radius: 20px;
-    margin:40px 0px;
-    padding-left: 30px;
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    cursor: pointer;
-    animation: ease-in 3s scrolAnimation;
-}
-.telegram_title{
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    padding-bottom: 8px;
-}
-.telegram_text{
-    color: white;
-    font-size: var(--text-size);
-    font-weight: var(--text-weight);
-}
-.actions__instagram{
-    background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-    width: 100%;
-    height: 120px;
-    border-radius: 20px;
-    margin:40px 0 10px 0; 
-    padding-left: 30px;
+/* LINKBORD */
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    cursor: pointer;
-    animation: ease-in 1.5s scrolAnimation;
-}
-.instagram_title{
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    padding-bottom: 8px;
-}
-.instagram_text{
-    color: white;
-    font-size: var(--text-size);
-    font-weight: var(--text-weight);
-}
 .link__bord{
-    background: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    box-shadow: 1px 1px 10px 0px rgb(199, 199, 199);
-    color: grey;
+    padding: 35px 20px;
+
+    border-radius: 26px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+    gap: 18px;
+
     cursor: pointer;
-    transition: linear 0.3s;
-}
-.link__bord:nth-child(1){
-    animation: ease-in 0.8s linkBord;
-}
-.link__bord:nth-child(2){
-    animation: ease-in 1s linkBord;
-}
-.link__bord:nth-child(3){
-    animation: ease-in 1.2s linkBord;
-}
-.link__bord:nth-child(4){
-    animation: ease-in 1.4s linkBord;
-}
-.link__bord:nth-child(5){
-    animation: ease-in 1.6s linkBord;
-}
-.link__bord:nth-child(6){
-    animation: ease-in 1.8s linkBord;
+
+    background: rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    transition: 0.35s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-@keyframes linkBord {
-    0% {
-        transform: scale(1%);
-        opacity: 0;
+.link__bord:hover{
+    transform: translateY(-8px) scale(1.03);
+
+    background: rgba(255,255,255,0.28);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.bord_img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.bord_subtitle{
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+
+    text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px){
+
+    .hero__wraper{
+        flex-direction: column-reverse;
     }
-    50%{
-        transform: scale(30%);
-        opacity: 1;
+
+    .hero__list{
+        grid-template-columns: 1fr;
     }
-    100% {
-        transform: scale(100%);
+
+    .actions__wraper{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-@keyframes scrolAnimation{
-    0%{
-        transform: translateY(20px);
-        opacity: 0;
+
+@media (max-width: 700px){
+
+    .site__main{
+        padding: 20px 0;
     }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
+
+    .hero__wraper{
+        padding: 25px;
+    }
+
+    .hero_title{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .hero_img{
+        width: 230px;
+        height: 230px;
+    }
+
+    .actions_title{
+        font-size: 30px;
+    }
+
+    .actions__wraper{
+        grid-template-columns: 1fr;
+    }
+
+    .actions__instagram,
+    .actions__telegram{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bord_subtitle{
+        font-size: 20px;
     }
 }

@@ -49,8 +49,8 @@ function Profile() {
       <div className="conteyner hero__wraper-profile">
         <img width={355} src={profile?.image} alt="" className="hero_img" />
         <div className="hero__inner">
-         <h1 className="hero_title">{profile?.name}</h1>
-         <p className="hero_text">this is your profile</p>
+         <h1 className="hero_title-profile">{profile?.name}</h1>
+         <p className="hero_text-profile">this is your profile</p>
         </div>
       </div>
     </section>

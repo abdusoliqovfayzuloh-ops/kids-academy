@@ -1,14 +1,19 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import "./Student.css"
+import paymentIcon from "../../assets/icon/payment Icon.png"
+import coinIcon from "../../assets/icon/up.png"
+import AdminModal from '../MiniModal/AdminModal'
 
 function Student() {
   const [students, setStudents] = useState([])
+  const [openModal, setOpenModal] = useState(false)
+  const [infoObject, setInfoObject] = useState({firebaseKey: "", functionName: ""})
 
   async function getStudents(){
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profile.json")
-      const data = Object.values(res.data)
+      const data = Object.entries(res.data).map(([key, value]) => ({firebaseKey: key, ...value}))
       setStudents(data)
     }catch(err){
       console.log(err.message)
@@ -18,7 +23,7 @@ function Student() {
     getStudents()
   },[])
 
-  return (<ul className='students__list'>
+  return (<><ul className='students__list'>
     {
       students?.map((student) => <li key={student.id} className="student_item">
         <div className="student__info">
@@ -29,12 +34,30 @@ function Student() {
           </div>
         </div>
         <div className="student__right">
-          <span className="student_span">{student.number}</span> <br />
-          <span className="student_span">{student.age} years old</span>
+          <div className="student__inner">
+            <span className="student_span">{student.number}</span> <br />
+            <span className="student_span">{student.age} years old</span>
+          </div>
+          <div className="student__btn">
+            <img onClick={(evt) => {
+              evt.preventDefault()
+              setOpenModal(true)
+              setInfoObject({firebaseKey:student.firebaseKey, functionName: "Add Payment"})
+            }} width={56} src={paymentIcon} alt="" />
+            <img onClick={(evt) => {
+              evt.preventDefault()
+              setOpenModal(true)
+              setInfoObject({firebaseKey:student.firebaseKey, functionName: "Add Coin"})
+            }} width={56} src={coinIcon} alt="" />
+          </div>
         </div>
       </li>)
     }
-  </ul>)
+  </ul>
+  {
+    openModal && <AdminModal setOpenModal={setOpenModal} infoObject={infoObject}/>
+  }
+  </>)
 }
 
 export default Student
