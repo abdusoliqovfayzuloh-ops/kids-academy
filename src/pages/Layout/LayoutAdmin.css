@@ -46,46 +46,10 @@
     }
 }
 
-/* SMALL TABLET */
-@media (max-width: 768px){
-
-    .layout__admin{
-        grid-template-columns: 1fr;
-        grid-template-rows: 80px 1fr;
-    }
-
-    .admin__sidebar{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-        height: 70px;
-
-        grid-column: 1/2;
-        grid-row: auto;
-
-        z-index: 1000;
-    }
-
-    .admin__header{
-        grid-column: 1/2;
-    }
-
-    .admin__main{
-        grid-column: 1/2;
-        padding: 20px;
-    }
-}
-
 /* PHONE */
 @media (max-width: 480px){
-
-    .admin__main{
-        padding: 15px;
-    }
-
     .layout__admin{
-        grid-template-rows: 70px 1fr;
+       grid-template-columns: 60px 1fr;
+       grid-template-rows: 60px 1fr;
     }
 }

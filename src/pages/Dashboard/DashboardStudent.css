@@ -232,10 +232,14 @@
     .hero__wraper{
         gap: 30px;
         padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
     }
 
     .hero__list{
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero_img{

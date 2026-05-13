@@ -83,7 +83,7 @@ function DashboardStudent() {
         <h2 className="actions_title">Bo'limlar</h2>
         <div className="actions__instagram" onClick={(evt) => {
           evt.preventDefault()
-          window.location.href = "https://www.instagram.com/kids__academy1?igsh=MTZuN3R6MmNsa3pndQ%3D%3D&utm_source=qr"
+          window.location.href = "https://www.instagram.com/kids.academy001?igsh=MWQxYXoyMDZ4OTN6dQ=="
         }}>
           <img width={90} src={instagram} alt="" className="instagram_img" />
           <div className="instagram__content">
