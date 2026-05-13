@@ -1,10 +1,5 @@
 .site__header{
-    background: linear-gradient(
-        135deg,
-        rgba(144, 238, 144, 0.441) 0%,
-        rgba(0, 183, 255, 0.468) 55%,
-        rgba(255, 183, 0, 0.385) 100%
-    );
+    background: linear-gradient(135deg,rgba(144, 238, 144, 0.441),rgba(0, 183, 255, 0.468) );
     width: 100%;
     padding: 18px 0;
 
@@ -120,4 +115,86 @@
 
 .header_btn:active{
     transform: scale(0.97);
+}
+/* ======================
+   RESPONSIVE HEADER
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+    .header_title{
+        font-size: 24px;
+    }
+
+    .header_logo{
+        width: 55px;
+        height: 55px;
+    }
+
+    .header_btn{
+        padding: 12px 26px;
+        font-size: 15px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .header__wraper{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header__logo{
+        width: 100%;
+    }
+
+    .header_title{
+        font-size: 22px;
+    }
+
+    .header_title span{
+        font-size: 12px;
+    }
+
+    .header__btn{
+        width: 100%;
+    }
+
+    .header_btn{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .site__header{
+        padding: 14px 0;
+    }
+
+    .header__wraper{
+        gap: 12px;
+    }
+
+    .header_logo{
+        width: 50px;
+        height: 50px;
+    }
+
+    .header_title{
+        font-size: 18px;
+    }
+
+    .header_title span{
+        font-size: 11px;
+    }
+
+    .header_btn{
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
 }

@@ -53,6 +53,66 @@
     margin-top: 10px;
     transition: linear 0.3s;
 }
-.student_btn:hover{
-    background: linear-gradient(135deg,  rgb(125, 217, 125) 10%, rgb(0, 142, 230) 80%, rgba(193, 125, 0, 0.608) 100%);
+/* ======================
+   STUDENT FORM RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .student__form{
+        width: 60%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .student_input{
+        width: 100%;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .student__form{
+        width: 80%;
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    .student_label{
+        font-size: 15px;
+    }
+
+    .student_input{
+        height: 48px;
+        font-size: 14px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .student__form{
+        width: 95%;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .student_label{
+        font-size: 14px;
+    }
+
+    .student_input{
+        height: 45px;
+        font-size: 14px;
+        padding: 0 10px 0 14px;
+        border-radius: 10px;
+    }
+
+    .student_btn{
+        height: 42px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
 }

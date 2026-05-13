@@ -176,3 +176,89 @@
 .profil_btn:active{
     transform: scale(0.97);
 }
+
+@media (max-width: 1024px) {
+  .hero_img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero_title-profile {
+    font-size: 34px;
+  }
+
+  .profile__form {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__wraper-profile {
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .hero_img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero_title-profile {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .hero_text-profile {
+    font-size: 15px;
+  }
+
+  .profile_label {
+    font-size: 16px;
+  }
+
+  .profile_input {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .profil_btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__wraper-profile {
+    padding: 18px;
+  }
+
+  .hero_img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero_title-profile {
+    font-size: 22px;
+  }
+
+  .hero_text-profile {
+    font-size: 14px;
+  }
+
+  .profile__form {
+    padding: 18px;
+  }
+
+  .profile_label {
+    font-size: 14px;
+  }
+
+  .profile_input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .profil_btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

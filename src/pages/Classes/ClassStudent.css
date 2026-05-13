@@ -144,3 +144,98 @@
 
     color: rgba(255,255,255,0.85);
 }
+/* ======================
+   HERO RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .teacher_title{
+        font-size: 40px;
+    }
+
+    .teacher_phone{
+        font-size: 18px;
+        padding: 10px 24px;
+    }
+
+    .teacher__wraper{
+        padding: 35px;
+    }
+
+    .student-list{
+        grid-template-columns: 1fr;
+    }
+
+    .student-item{
+        padding: 20px;
+    }
+
+    .student-item__left h3{
+        font-size: 20px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .teacher_title{
+        font-size: 32px;
+    }
+
+    .teacher_phone{
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .teacher__wraper{
+        padding: 28px;
+        border-radius: 22px;
+    }
+
+    .student-item{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .student-item__left{
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .teacher_title{
+        font-size: 26px;
+    }
+
+    .teacher_phone{
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .teacher__wraper{
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .student-item{
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .student-item__left h3{
+        font-size: 18px;
+    }
+
+    .student-coin,
+    .student-chip{
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}

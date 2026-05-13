@@ -3,9 +3,9 @@
     min-height: 100vh;
     background: linear-gradient(
         135deg,
-        rgba(144, 238, 144, 0.602) 0%,
-        rgba(0, 183, 255, 0.603) 55%,
-        rgba(255, 183, 0, 0.455) 100%
+        rgba(144, 238, 144, 0.845) 0%,
+        rgba(0, 183, 255, 0.717) 55%,
+        rgba(255, 183, 0, 0.417) 100%
     );
     padding: 40px 0;
 }
@@ -222,14 +222,25 @@
 
 /* RESPONSIVE */
 
-@media (max-width: 1100px){
+/* ======================
+   EXTRA RESPONSIVE POLISH
+====================== */
+
+/* LARGE TABLET */
+@media (max-width: 1024px){
 
     .hero__wraper{
-        flex-direction: column-reverse;
+        gap: 30px;
+        padding: 30px;
     }
 
     .hero__list{
         grid-template-columns: 1fr;
+    }
+
+    .hero_img{
+        width: 300px;
+        height: 300px;
     }
 
     .actions__wraper{
@@ -237,41 +248,135 @@
     }
 }
 
-@media (max-width: 700px){
-
-    .site__main{
-        padding: 20px 0;
-    }
-
-    .hero__wraper{
-        padding: 25px;
-    }
+/* TABLET */
+@media (max-width: 900px){
 
     .hero_title{
-        font-size: 30px;
+        font-size: 36px;
         text-align: center;
     }
 
+    .hero_text{
+        font-size: 18px;
+    }
+
     .hero_img{
-        width: 230px;
-        height: 230px;
+        width: 260px;
+        height: 260px;
     }
 
     .actions_title{
-        font-size: 30px;
+        font-size: 34px;
+        text-align: center;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .hero__wraper{
+        padding: 22px;
+        border-radius: 22px;
     }
 
-    .actions__wraper{
-        grid-template-columns: 1fr;
+    .hero_title{
+        font-size: 28px;
+    }
+
+    .hero_text{
+        font-size: 16px;
+    }
+
+    .hero_img{
+        width: 220px;
+        height: 220px;
+        border-radius: 20px;
+    }
+
+    .hero_item{
+        padding: 14px;
+    }
+
+    .hero_text{
+        font-size: 16px;
     }
 
     .actions__instagram,
     .actions__telegram{
-        flex-direction: column;
-        text-align: center;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .bord_img{
+        width: 65px;
+        height: 65px;
     }
 
     .bord_subtitle{
-        font-size: 20px;
+        font-size: 18px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .hero__wraper{
+        padding: 18px;
+        gap: 20px;
+    }
+
+    .hero_title{
+        font-size: 24px;
+    }
+
+    .hero_img{
+        width: 180px;
+        height: 180px;
+        border-radius: 16px;
+    }
+
+    .hero_item{
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .hero_text{
+        font-size: 14px;
+    }
+
+    .hero_strong{
+        font-size: 13px;
+    }
+
+    .actions_title{
+        font-size: 24px;
+    }
+
+    .actions__wraper{
+        gap: 15px;
+    }
+
+    .link__bord{
+        padding: 22px 14px;
+        border-radius: 18px;
+    }
+
+    .bord_img{
+        width: 55px;
+        height: 55px;
+    }
+
+    .bord_subtitle{
+        font-size: 16px;
+    }
+
+    .instagram_title,
+    .telegram_title{
+        font-size: 18px;
+    }
+
+    .instagram_text,
+    .telegram_text{
+        font-size: 14px;
     }
 }

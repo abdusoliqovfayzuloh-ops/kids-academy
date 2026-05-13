@@ -82,3 +82,75 @@
 
     backdrop-filter: blur(10px);
 }
+/* ======================
+   FOOD SECTION RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .food-list{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .food-item img{
+        height: 220px;
+    }
+
+    .text-content h3{
+        font-size: 24px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .food-list{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .food-item img{
+        height: 200px;
+    }
+
+    .text-content{
+        padding: 18px;
+    }
+
+    .text-content h3{
+        font-size: 22px;
+    }
+
+    .text-content p{
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .food-item{
+        border-radius: 20px;
+    }
+
+    .food-item img{
+        height: 170px;
+    }
+
+    .text-content{
+        padding: 15px;
+    }
+
+    .text-content h3{
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .text-content p{
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}

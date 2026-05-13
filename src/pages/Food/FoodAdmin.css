@@ -49,3 +49,79 @@
   font-weight: 600;
   color: darkblue;
 }
+/* ======================
+   FOOD ADMIN RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+  .food-item-admin{
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+  }
+
+  .food-item-admin img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .text-content-admin h3{
+    font-size: 1.1rem;
+  }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+  .food-item-admin{
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 18px;
+  }
+
+  .food-item-admin img{
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+  }
+
+  .text-content-admin h3{
+    font-size: 1rem;
+  }
+
+  .food-item-admin p{
+    font-size: 0.9rem;
+  }
+
+  .food__wraper-admin{
+    font-size: 24px;
+  }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+  .food-item-admin{
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .food-item-admin img{
+    width: 75px;
+    height: 75px;
+  }
+
+  .text-content-admin h3{
+    font-size: 0.95rem;
+  }
+
+  .food-item-admin p{
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .food__wraper-admin{
+    font-size: 20px;
+  }
+}

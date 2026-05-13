@@ -244,3 +244,94 @@
 
     transform: none;
 }
+@media (max-width: 1024px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .shop-title {
+    font-size: 38px;
+  }
+
+  .shop-card__media {
+    height: 220px;
+  }
+
+  .shop-card__body h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .shop-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .shop-hero__title-wrap {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .shop-title {
+    font-size: 30px;
+  }
+
+  .shop-subtitle {
+    font-size: 15px;
+  }
+
+  .shop-hero__coins {
+    justify-content: center;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .shop-hero {
+    padding: 18px;
+  }
+
+  .coin-value {
+    font-size: 22px;
+  }
+
+  .coin-badge {
+    font-size: 24px;
+  }
+
+  .coin-add {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .shop-card__media {
+    height: 180px;
+  }
+
+  .shop-card__body {
+    padding: 18px;
+  }
+
+  .shop-card__body h2 {
+    font-size: 20px;
+  }
+
+  .shop-card__price {
+    font-size: 14px;
+  }
+
+  .shop-card__price span {
+    font-size: 18px;
+  }
+
+  .shop-card__buy {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

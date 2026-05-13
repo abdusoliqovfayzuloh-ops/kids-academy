@@ -102,3 +102,92 @@
         grid-template-columns: 1fr;
     }
 }
+/* ======================
+   SEARCH RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .groups__list{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .search_input{
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .search_btn{
+        height: 50px;
+        padding: 0 22px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .search__form{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search_input,
+    .search_btn{
+        width: 100%;
+    }
+
+    .search_input{
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .search_btn{
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .groups__list{
+        grid-template-columns: 1fr;
+    }
+
+    .groups_item{
+        padding: 25px 18px;
+    }
+
+    .groups_subtitle{
+        font-size: 18px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .search_input{
+        height: 45px;
+        font-size: 14px;
+        padding: 0 14px;
+        border-radius: 14px;
+    }
+
+    .search_btn{
+        height: 45px;
+        font-size: 14px;
+        border-radius: 14px;
+    }
+
+    .groups_item{
+        padding: 20px 15px;
+        border-radius: 18px;
+    }
+
+    .groups__icon{
+        width: 60px;
+        height: 60px;
+    }
+
+    .groups_subtitle{
+        font-size: 16px;
+    }
+}

@@ -81,3 +81,71 @@
     color: white;
     font-weight: 700;
 }
+/* ======================
+   TEACHERS RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .teachers__list{
+        grid-template-columns: 1fr;
+    }
+
+    .teacher_item{
+        padding: 18px;
+    }
+
+    .teacher_name{
+        font-size: 18px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .teacher_item{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .teacher__info{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .teacher_name{
+        font-size: 17px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .teacher_item{
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .teacher_name{
+        font-size: 16px;
+    }
+
+    .teacher_email{
+        font-size: 12px;
+    }
+
+    .teacher_role{
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .teacher_index{
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+}

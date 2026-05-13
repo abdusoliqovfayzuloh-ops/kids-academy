@@ -49,3 +49,73 @@
     justify-content: center;
     margin-top: 20px;
 }
+/* ======================
+   RESPONSIVE MODAL
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+    .modal__content-top{
+        gap: 12px;
+    }
+
+    .modal_title{
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .modal__content-top{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .modal_title{
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .modal_label{
+        font-size: 14px;
+    }
+
+    .modal_input{
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .modal_btn-submit{
+        height: 42px;
+        font-size: 16px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .modal__content-top{
+        margin-bottom: 20px;
+    }
+
+    .modal__content{
+        margin-top: 15px;
+    }
+
+    .modal_label{
+        font-size: 13px;
+    }
+
+    .modal_input{
+        padding: 10px 12px;
+        border-radius: 12px;
+    }
+
+    .modal_btn-submit{
+        height: 40px;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+}

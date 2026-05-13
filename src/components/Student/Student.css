@@ -75,3 +75,81 @@
     color: #444;
     line-height: 28px;
 }
+/* ======================
+   STUDENTS RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .student_item{
+        padding: 14px 20px;
+    }
+
+    .student_avatar{
+        width: 60px;
+        height: 60px;
+    }
+
+    .student_name{
+        font-size: 18px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .student_item{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .student__right{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .student__info{
+        align-items: center;
+    }
+
+    .student_avatar{
+        width: 55px;
+        height: 55px;
+    }
+
+    .student_name{
+        font-size: 17px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .student_item{
+        padding: 12px 16px;
+        border-radius: 16px;
+    }
+
+    .student_avatar{
+        width: 50px;
+        height: 50px;
+    }
+
+    .student_name{
+        font-size: 16px;
+    }
+
+    .student_email{
+        font-size: 12px;
+    }
+
+    .student__btn{
+        gap: 3px;
+    }
+
+    .student_span{
+        font-size: 13px;
+    }
+}

@@ -84,3 +84,74 @@
    font-size: var(--text-size);
    font-weight: var(--subtitle-weight);
 }
+/* ======================
+   LOGIN RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .login_link,
+    .login_link-active{
+        width: 180px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .login_img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .login__link{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .login_link,
+    .login_link-active{
+        width: 240px;
+        height: 44px;
+    }
+
+    .login_title{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .login_text{
+        font-size: 15px;
+        text-align: center;
+        padding: 0 10px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .login_img{
+        width: 85px;
+        height: 85px;
+    }
+
+    .login_title{
+        font-size: 22px;
+    }
+
+    .login_text{
+        font-size: 13px;
+    }
+
+    .login_link,
+    .login_link-active{
+        width: 100%;
+        max-width: 260px;
+        height: 42px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+}

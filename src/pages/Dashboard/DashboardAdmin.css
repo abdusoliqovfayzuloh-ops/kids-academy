@@ -98,3 +98,75 @@
 
     opacity: 0.5;
 }
+/* ======================
+   ADMIN MAIN RESPONSIVE
+====================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .admin__hero{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+        gap: 20px;
+    }
+
+    .users__list{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 768px){
+
+    .admin__main{
+        gap: 25px;
+    }
+
+    .admin__hero{
+        grid-template-columns: 1fr;
+        grid-auto-rows: 130px;
+        gap: 15px;
+    }
+
+    .users{
+        gap: 20px;
+    }
+
+    .users_item{
+        height: 50px;
+    }
+
+    .activeStudent,
+    .activeTeacher,
+    .notActiveStudent,
+    .notActiveTeacher{
+        font-size: 15px;
+        border-radius: 14px;
+    }
+}
+
+/* PHONE */
+@media (max-width: 480px){
+
+    .admin__main{
+        gap: 18px;
+    }
+
+    .admin__hero{
+        grid-auto-rows: 120px;
+        gap: 12px;
+    }
+
+    .users_item{
+        height: 45px;
+    }
+
+    .activeStudent,
+    .activeTeacher,
+    .notActiveStudent,
+    .notActiveTeacher{
+        font-size: 14px;
+        border-radius: 12px;
+    }
+}
