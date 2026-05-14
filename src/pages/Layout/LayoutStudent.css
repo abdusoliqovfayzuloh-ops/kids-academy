@@ -44,6 +44,9 @@ body button{
 input{
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
+input::placeholder{
+    color: aliceblue;
+}
 input:focus {
     outline: none;
     border-color: #4ecdc4;

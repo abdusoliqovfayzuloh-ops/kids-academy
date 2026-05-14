@@ -17,10 +17,10 @@ function Login() {
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json")
       const data = await Object.values(res.data)
       const user = data.find((user) => user.email == email && user.password == password)
-      
+      console.log(user)
       if(user.data.role == "student"){
         navigate("/layoutStudent/dashboard")
-        JSON.stringify(localStorage.setItem("studentObject", user))
+        localStorage.setItem("studentObject", JSON.stringify(user.data))
       }else{
         navigate("/layoutAdmin/dashboard")
       }
@@ -34,7 +34,7 @@ function Login() {
     <section className="login">
       <div className="conteyner login__wraper">
         <div className="login__content">
-          <img src={studentImg} alt="" className="login_img" />
+          <img src={adminImg} alt="" className="login_img" />
           <h2 className="login_title">Welcome Back!</h2>
           <p className="login_text">hallo user change your email and password</p>
         </div>
@@ -44,11 +44,11 @@ function Login() {
         }} className="login__form">
           <div className="login__content-form">
             <label htmlFor="email" className="login_label">Emailingizni kiriting</label>
-            <input id='email' type="email" className="login_input" onChange={(evt) => setEmail(evt.target.value)}/>
+            <input id='email' type="email" className="login_input" placeholder='change your email' onChange={(evt) => setEmail(evt.target.value)}/>
           </div>
           <div className="login__content-form">
             <label htmlFor="password" className="login_label">Passwordingizni kiriting</label>
-            <input id='password' type="password" className="login_input" onChange={(evt) => setPassword(evt.target.value)}/>
+            <input id='password' type="password" className="login_input" placeholder='change your password' onChange={(evt) => setPassword(evt.target.value)}/>
           </div>
           <button className="login_btn">login</button>
         </form>

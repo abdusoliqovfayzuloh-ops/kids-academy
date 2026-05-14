@@ -5,12 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.student{
-    background: linear-gradient(135deg, lightgreen 10%, rgb(0, 157, 255) 80%, rgba(255, 166, 0, 0.55) 100%);
-}
-.admin{
-    background: linear-gradient(135deg, rgb(0, 157, 255) 40%, rgba(255, 166, 0, 0.425) 100%);
+    padding-top: 40px;
 }
 
 .login__content{
@@ -18,10 +13,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .login_img{
-    background: white;
+    background: rgba(255, 255, 255, 0.467);
+    backdrop-filter: blur(15px) contrast(1.2);
     width: 110px;
     height: 110px;
     border-radius: 50%;
@@ -49,40 +45,6 @@
     color: white;
     font-size: var(--text-size);
     font-weight: var(--text-weight);
-}
-
-.login__link{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-.login_link-active{
-   background: white;
-   color: green;
-   width: 205px;
-   height: 45px;
-   border-radius: 15px;
-
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-size: var(--text-size);
-   font-weight: var(--subtitle-weight);
-}
-.login_link{
-   background: rgba(255, 255, 255, 0.428);
-   backdrop-filter: blur(5px);
-   color: white;
-   width: 205px;
-   height: 45px;
-   border-radius: 15px;
-
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-size: var(--text-size);
-   font-weight: var(--subtitle-weight);
 }
 /* ======================
    LOGIN RESPONSIVE
@@ -157,7 +119,9 @@
 }
 
 .login__form{
-    background: white;
+    background: rgba(255, 255, 255, 0.467);
+    backdrop-filter: blur(15px) contrast(1.2);
+    box-shadow: gainsboro 2px 2px 5px 0;
     border-radius: 20px;
 
     width: 420px;
@@ -193,15 +157,18 @@
 
 .login_label{
     font-size: 16px;
+    color: white;
     font-weight: 600;
 }
 
 .login_input{
+    background:transparent;
     width: 100%;
     height: 50px;
 
     border-radius: 10px;
-    border: 2px solid grey;
+    border: 2px solid rgb(62, 62, 62);
+    color: white;
 
     padding: 0 10px 0 20px;
 
