@@ -26,6 +26,7 @@ function AdminLogin() {
       }
     }catch(err){
       console.log(err.message)
+      alert("Bu foydalanuvchi aniqlanmadi")
     }
   }
   useEffect(() => {

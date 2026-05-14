@@ -26,7 +26,7 @@ function StudentLogin() {
       }
     }catch(err){
       console.log(err.message)
-      alert("Bu acaunt mavjud emas")
+      alert("Bu foydalanuvchi aniqlanmadi")
     }
   }
   useEffect(() => {
