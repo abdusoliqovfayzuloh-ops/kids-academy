@@ -10,6 +10,8 @@ function PaymentsAdmin() {
     try {
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Payment.json")
       const data = await Object.values(res.data)
+      console.log(data)
+
       paymentArray(data)
     } catch (err) {
       console.log(err.message)
