@@ -1,26 +1,57 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Navigate, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import "./Login.css"
 import studentImg from '../../assets/icon/studentImgLogin.png'
 import adminImg from '../../assets/icon/adminImgLogin.png'
+import axios from 'axios'
 
 function Login() {
   const location = useLocation()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate("")
   const login = location.pathname == "/login/student" ? JSON.parse(localStorage.getItem("loginStudent")) : JSON.parse(localStorage.getItem("loginAdmin"))
   
-  return (<main className={`site__main ${login?.body}`}>
+  async function getUser(){
+    try{
+      const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Login.json")
+      const data = await Object.values(res.data)
+      const user = data.find((user) => user.email == email && user.password == password)
+      
+      if(user.data.role == "student"){
+        navigate("/layoutStudent/dashboard")
+        JSON.stringify(localStorage.setItem("studentObject", user))
+      }else{
+        navigate("/layoutAdmin/dashboard")
+      }
+    }catch(err){
+      console.log(err.message)
+      alert("Bu foydalanuvchi mavjud emas")
+    }
+  }
+
+  return (<main className={`site__main`}>
     <section className="login">
       <div className="conteyner login__wraper">
         <div className="login__content">
-          <img src={login?.img == "studentImg"? studentImg : adminImg} alt="" className="login_img" />
+          <img src={studentImg} alt="" className="login_img" />
           <h2 className="login_title">Welcome Back!</h2>
-          <p className="login_text">{login?.text}</p>
+          <p className="login_text">hallo user change your email and password</p>
         </div>
-        <div className="login__link">
-          <NavLink className={({isActive}) => isActive? "login_link-active" : "login_link"} to={"/login/student"}>Student Login</NavLink>
-          <NavLink className={({isActive}) => isActive? "login_link-active" : "login_link"} to={"/login/admin"}>Admin Login</NavLink>
-        </div>
-        <Outlet/>
+        <form onSubmit={(evt) => {
+          evt.preventDefault()
+          getUser()
+        }} className="login__form">
+          <div className="login__content-form">
+            <label htmlFor="email" className="login_label">Emailingizni kiriting</label>
+            <input id='email' type="email" className="login_input" onChange={(evt) => setEmail(evt.target.value)}/>
+          </div>
+          <div className="login__content-form">
+            <label htmlFor="password" className="login_label">Passwordingizni kiriting</label>
+            <input id='password' type="password" className="login_input" onChange={(evt) => setPassword(evt.target.value)}/>
+          </div>
+          <button className="login_btn">login</button>
+        </form>
       </div>
     </section>
   </main>)

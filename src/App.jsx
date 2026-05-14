@@ -13,8 +13,6 @@ import FoodStudent from './pages/Food/FoodStudent'
 import FoodAdmin from './pages/Food/FoodAdmin'
 import Teacher from './components/Teacher/Teacher'
 import Student from './components/Student/Student'
-import StudentLogin from './components/StudentLogin/StudentLogin'
-import AdminLogin from './components/AdminLogin/AdminLogin'
 import PaymentsStudent from './pages/Payments/PaymentsStudent'
 import PaymentsAdmin from './pages/Payments/PaymentsAdmin'
 import Profile from './pages/Profile/Profile'
@@ -30,21 +28,7 @@ function App() {
     },
     {
       path: "/login",
-      element: <Login/>,
-      children: [
-        {
-          index: true,
-          element: <Navigate to={"student"}/>
-        },
-        {
-          path: "student",
-          element: <StudentLogin/>
-        },
-        {
-          path: "admin",
-          element: <AdminLogin/>
-        }
-      ]
+      element: <Login/>
     },
     {
       path: "/layoutAdmin",
