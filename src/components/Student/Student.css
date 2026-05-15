@@ -36,11 +36,11 @@
 }
 .student__content{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     gap: 2px;
-    margin-bottom: -15px;
+    margin-bottom: 15px;
 }
 .student_name{
     font-size: var(--subtitle-size);
