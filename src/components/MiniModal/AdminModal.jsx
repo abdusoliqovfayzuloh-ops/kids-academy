@@ -61,7 +61,7 @@ function AdminModal({setOpenModal, infoObject}) {
     getPayment()
   },[])
 
-  return (<form className='modal__form' onClick={(evt) => {
+  return (<form className='modal__form' onSubmit={(evt) => {
     evt.preventDefault()
     if(infoObject.functionName == "Add Coin"){
       patchCoin()
