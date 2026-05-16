@@ -78,13 +78,11 @@ function Modal({functionName, setOpenModal, openModal}) {
           password: password
         }
       )
-      console.log(resLogin)
       const resProfile = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Profile.json",{
         ...profile,
         email: email, 
         name: name
       })
-      console.log(resProfile)
       const resPayment = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Payment.json",{
         data:[
           {
@@ -95,14 +93,12 @@ function Modal({functionName, setOpenModal, openModal}) {
         ],
         id: profile?.id
       })
-      console.log(resPayment)
       const resScore = await axios.post("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Score.json",{
         id: profile?.id,
         name: name,
         point: point,
         age: profile?.age
       })
-      console.log(resScore)
       const oldGroup = groups?.find((group) => group.group == groupName)
       const resGroup = await axios.patch(`https://kindergarten-4d40e-default-rtdb.firebaseio.com/Group/${oldGroup?.firebaseKey}.json`,{
         data: [
@@ -114,8 +110,6 @@ function Modal({functionName, setOpenModal, openModal}) {
           }
         ]
       })
-      console.log(oldGroup.firebaseKey)
-      console.log(resGroup)
      }
     }catch(err){
       console.log(err.message)
