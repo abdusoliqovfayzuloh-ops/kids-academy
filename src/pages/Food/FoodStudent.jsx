@@ -8,7 +8,8 @@ function FoodStudent() {
   async function getFood(){
     try{
       const res = await axios.get("https://kindergarten-4d40e-default-rtdb.firebaseio.com/Food.json")
-      setFood(res.data)
+      const data = await Object.values(res.data)
+      setFood(data)
       console.log(res.data)
     }catch(err){
       console.log(err.message)
